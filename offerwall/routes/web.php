@@ -22,7 +22,7 @@ Route::get('/earn', function () {
 });
 Route::get('/rewards', function () {
     return view('rewards');
-});
+}); 
 Route::get('/starter_zone', function () {
     return view('starter_zone');
 });
