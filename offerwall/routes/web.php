@@ -18,13 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/earn', function () {
-    return view('welcome');
+    return view('earn');
 });
 Route::get('/rewards', function () {
-    return view('welcome');
+    return view('rewards');
 });
 Route::get('/starter_zone', function () {
-    return view('welcome');
+    return view('starter_zone');
 });
 
 Auth::routes();
