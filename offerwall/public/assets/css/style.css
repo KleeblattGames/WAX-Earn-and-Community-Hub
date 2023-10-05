@@ -1232,7 +1232,7 @@ select:focus {
 
 /* Footer Area Start */
 .footer {
-  padding-top: 120px;
+  padding-top: 50px;
   overflow: hidden;
   position: relative;
   background-color: #070b28;
