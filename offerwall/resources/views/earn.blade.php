@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<link href="{{ asset('assets/css/earn.css') }}" rel="stylesheet"  type="text/css" />
+{{-- <link href="{{ asset('assets/css/earn.css') }}" rel="stylesheet"  type="text/css" /> --}}
 <div class="container">
     <div id="slide-left-container">
       <div class="slide-left">
