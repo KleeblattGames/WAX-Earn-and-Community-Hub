@@ -164,7 +164,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="/starter_zone">Starter Zone
+                                            <a class="nav-link active" href="/starter_zone" onclick="">Starter Zone
                                                 <div class="mr-hover-effect"></div>
                                             </a>
                                         </li>
