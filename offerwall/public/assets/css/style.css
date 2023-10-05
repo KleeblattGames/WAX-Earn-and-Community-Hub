@@ -62,6 +62,7 @@ body {
   margin: 0;
   color: #a1aed4;
   overflow-x: hidden;
+  background: #070b28;
 }
 
 body.modal-open {
@@ -2089,7 +2090,6 @@ select:focus {
 /* Get Start Area End */
 /*  Recent Winners Area Start */
 .recent-winners {
-  background: #070b28;
   padding: 60px 0px 0px;
 }
 .recent-winners .section-heading {
