@@ -158,23 +158,23 @@
                                 <div class="navbar-collapse justify-content-end fixed-height" id="main_menu">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link" href="/home">
+                                            <a class="nav-link {{ (request()->segment(1) == 'home' || request()->segment(1) == 'profile' ) ? 'active' : '' }}" href="/home">
                                                 Home
                                                 <div class="mr-hover-effect"></div>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="/starter_zone" onclick="">Starter Zone
+                                            <a class="nav-link {{ (request()->segment(1) == 'starter_zone') ? 'active' : '' }}" href="/starter_zone">Starter Zone
                                                 <div class="mr-hover-effect"></div>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/earn">Earn WAXP
+                                            <a class="nav-link {{ (request()->segment(1) == 'earn') ? 'active' : '' }}" href="/earn">Earn WAXP
                                                 <div class="mr-hover-effect"></div>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/rewards">Rewards
+                                            <a class="nav-link {{ (request()->segment(1) == 'rewards') ? 'active' : '' }}" href="/rewards">Rewards
                                                 <div class="mr-hover-effect"></div>
                                             </a>
                                         </li>

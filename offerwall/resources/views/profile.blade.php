@@ -335,7 +335,7 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="stake_panel" role="tabpanel" aria-labelledby="stake-tab">
-                                    <div class="h1">COMMING SOON!!!</div>
+                                    <div class="h1 px-[20px] py-[20px]">COMMING SOON!!!</div>
                                 </div>
                             </div>
                         </div>
