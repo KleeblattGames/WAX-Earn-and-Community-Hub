@@ -27,12 +27,12 @@ width: 99999px;
     /* Add shadows to create the "card" effect */
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background: #fff;
+    background: #4a4f917a;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     width: 135px;
     margin: 15px 7.5px;
-    border-radius: 15px;
+    border-radius: 7px;
 }
 .center{
     display: flex;
@@ -48,9 +48,37 @@ cursor: pointer;
 .ecard-img {
     width: 90%;
     display: inline-block;
-    border-radius: 15px;
-    margin-top: 5px;
+    border-radius: 7px;
+    margin-top: 7px;
 }
+.pcard {
+    /* Add shadows to create the "card" effect */
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: #4a4f917a;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    width: 135px;
+    height: 200px;
+    margin: 15px 7.5px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pcard:hover {
+-webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+cursor: pointer;
+}
+
+.pcard-img {
+    width: 90%;
+    height: 90%;
+    display: inline-block;
+    border-radius: 7px;
+}
+
 
 #slide-left-container,
 #slide-right-container {

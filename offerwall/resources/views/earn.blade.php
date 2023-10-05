@@ -20,25 +20,202 @@
           <div class="ecards">
             <div class="ecard">
               <div class="center">
-                <img  class="ecard-img " src="http://via.placeholder.com/220x220" alt="Animals" >
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
               </div>
               <div class="center">
                 <p>Animals</p>
               </div>
-              <div class="row">
-                <div class="col-sm-6">
-                  <p style="text-align: left;">0.03$</p>
-                </div>
-                <div class="col-sm-6">
-                  <p style="background-color: rgb(194, 219, 255);text-align:right">
-                    Game
-                  </p>
-                </div>
-              </div>             
-            </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>            
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
+            <div class="ecard">
+              <div class="center">
+                <img  class="ecard-img " src="{{ asset('assets/images/offer_partners/sample.png') }}" alt="Animals" >
+              </div>
+              <div class="center">
+                <p>Animals</p>
+              </div>
+              <div class="center">
+                <p>0.03$</p>
+              </div>
+              <div class="center">
+                <p>Game</p>
+              </div>  
+            </div>  
           </div>
         </div>
-    
         <div id="slide-right-container">
           <div class="slide-right">
           </div>
@@ -46,8 +223,45 @@
       </div>
     </div>
   </div>
-  <div class="row">
-
+  <div class="row center">
+    <div class="col-sm-10">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="center">
+            <p style="font-size: 30px">Offer Partners</p>
+          </div>
+          <div class="row">
+            <div id="ecards-container">
+              <div class="ecards center">
+                <div class="pcard">
+                  <img  class="pcard-img " src="{{ asset('assets/images/offer_partners/lootably.png') }}" alt="Animals" >  
+                </div> 
+                <div class="pcard">
+                  <img  class="pcard-img " src="{{ asset('assets/images/offer_partners/notik.png') }}" alt="Animals" >  
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="center">
+            <p style="font-size: 30px">Survey Partners</p>
+          </div>
+          <div class="row">
+            <div id="ecards-container">
+              <div class="ecards center">
+                <div class="pcard">
+                  <img  class="pcard-img " src="{{ asset('assets/images/offer_partners/lootably.png') }}" alt="Animals" >  
+                </div> 
+                <div class="pcard">
+                  <img  class="pcard-img " src="{{ asset('assets/images/offer_partners/notik.png') }}" alt="Animals" >  
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   
 
