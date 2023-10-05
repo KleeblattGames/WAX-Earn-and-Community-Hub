@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/home');
 });
-Route::get('/earn', function () {
-    return view('earn');
-});
+// Route::get('/earn', function () {
+//     return view('earn');
+// });
 Route::get('/rewards', function () {
     return view('rewards');
 }); 
@@ -33,6 +33,8 @@ Route::get('/profile', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::resource( '/earn', App\Http\Controllers\EarnController::class );
+Route::resource( '/earn', App\Http\Controllers\EarnController::class )->middleware('auth');
+
+//Route::get('/earn_special', [App\Http\Controllers\EarnController::class, 'special']);
 // Route::resource( '/starter_zone', App\Http\Controllers\StarterZoneController::class );
 // Route::resource( '/rewards', App\Http\Controllers\RewardsController::class );
