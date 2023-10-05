@@ -29,6 +29,9 @@ Route::get('/starter_zone', function () {
 Route::get('/profile', function () {
     return view('profile');
 });
+Route::get('/profile', function () {
+    return view('profile');
+});
 
 Auth::routes();
 
