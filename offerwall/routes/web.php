@@ -26,6 +26,9 @@ Route::get('/rewards', function () {
 Route::get('/starter_zone', function () {
     return view('starter_zone');
 });
+Route::get('/profile', function () {
+    return view('profile');
+});
 
 Auth::routes();
 
