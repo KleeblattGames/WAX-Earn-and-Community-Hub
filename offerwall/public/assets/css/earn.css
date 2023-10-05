@@ -1,4 +1,4 @@
-.container {
+.econtainer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -8,42 +8,48 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 4px 16px;
+    padding: 10px;
 }
 
-#cards-container {
+#ecards-container {
 overflow: hidden;
 margin: 20px;
 }
 
-.cards {
+.ecards {
 display: -webkit-box;
 display: -ms-flexbox;
 display: flex;
 width: 99999px;
 }
 
-.card {
-/* Add shadows to create the "card" effect */
--webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-background: #fff;
--webkit-transition: 0.3s;
-transition: 0.3s;
-width: 235px;
-margin: 15px 7.5px;
+.ecard {
+    /* Add shadows to create the "card" effect */
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: #fff;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    width: 135px;
+    margin: 15px 7.5px;
+    border-radius: 15px;
 }
-
-.card:hover {
+.center{
+    display: flex;
+    justify-content: center;
+    width: 100% ;
+}
+.ecard:hover {
 -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 cursor: pointer;
 }
 
-.card .img {
-max-width: 220px;
-height: 220px;
-display: inline-block;
+.ecard-img {
+    width: 90%;
+    display: inline-block;
+    border-radius: 15px;
+    margin-top: 5px;
 }
 
 #slide-left-container,
