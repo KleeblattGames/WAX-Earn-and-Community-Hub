@@ -21,6 +21,121 @@
 
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        .user-menu-wrap {
+            position: relative;
+            width: 36px;
+            margin: 50px auto;
+        }
+
+        .menu-container {
+            visibility: hidden;
+            opacity: 0;
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+                transition: all .2s ease-in-out;
+            }
+        }
+
+        .user-menu {
+            position: absolute;
+            right: -22px;
+            background-color: #FFFFFF;
+            width: 256px;
+            border-radius: 2px;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 20px;
+
+            .profile-highlight {
+                display: flex;
+                border-bottom: 1px solid $#E0E0E0;
+                padding: 12px 16px;
+                margin-bottom: 6px;
+
+                img {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 25px;
+                    object-fit: cover;
+                }
+
+                .details {
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto 12px;
+
+                    #profile-name {
+                        font-weight: 600;
+                        font-size: 16px;
+
+                    }
+
+                    #profile-footer {
+                        font-weight: 300;
+                        font-size: 14px;
+                        margin-top: 4px;
+                    }
+                }
+
+            }
+
+            .footer {
+                border-top: 1px solid $#E0E0E0;
+                padding-top: 6px;
+                margin-top: 6px;
+
+                .user-menu-link {
+                    font-size: 13px;
+                }
+            }
+
+            .user-menu-link {
+                display: flex;
+                text-decoration: none;
+                color: #333333;
+                font-weight: 400;
+                font-size: 14px;
+                padding: 12px 16px;
+
+                div {
+                    margin: auto 10px;
+                }
+
+                &:hover {
+                    background-color: #F5F5F5;
+                    color: #333333;
+                }
+            }
+
+            &:before {
+                position: absolute;
+                top: -16px;
+                left: 120px;
+                display: inline-block;
+                content: "";
+                border: 8px solid transparent;
+                border-bottom-color: $#E0E0E0;
+            }
+
+            &:after {
+                position: absolute;
+                top: -14px;
+                left: 210px;
+                display: inline-block;
+                content: "";
+                border: 7px solid transparent;
+                border-bottom-color: #FFFFFF;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -70,25 +185,47 @@
                                             {{-- <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin">Register / Login</a> --}}
                                         @endif
                                     @else
-                                        <div class="flex items-center justify-between w-[350px]">
+                                        <div class="flex items-center justify-between w-[350px] h-[82px]">
                                             <div class="flex flex-column">
                                                 {{-- <a href="{{ route('logout') }}">
                                                     <img src="{{ asset('assets/images/man_icon.png') }}" alt="man_icon"
                                                         width="40px">
                                                 </a> --}}
-                                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                                    <img src="{{ asset('assets/images/man_icon.png') }}" alt="man_icon"
-                                                        width="40px">
-                                                </a>
-                                                <a href="/user/{{ Auth::user()->user_id }}"
-                                                    class="text-[14px]">Settings</a>
+                                                <div class="user-menu-wrap">
 
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                    class="d-none">
-                                                    @csrf
-                                                </form>
+                                                    <a class="mini-photo-wrapper" href="#"><img class="mini-photo"
+                                                            src="{{ asset('assets/images/man_icon.png') }}" width="36"
+                                                            height="36" /></a>
+
+                                                    <div class="menu-container">
+                                                        <ul class="user-menu">
+                                                            <div class="profile-highlight items-center">
+                                                                <img src="{{ asset('assets/images/man_icon.png') }}"
+                                                                    alt="profile-img" width=36 height=36>
+                                                                <div class="details px-[15px]">
+                                                                    <div id="profile-name">{{ Auth::user()->name }}</div>
+                                                                </div>
+                                                            </div>
+                                                            <li class="user-menu__item">
+                                                                <a class="user-menu-link" href="/profile">
+                                                                    <div>Profile</div>
+                                                                </a>
+                                                            </li>
+                                                            <li class="user-menu__item">
+                                                            <li class="user-menu__item"><a class="user-menu-link"
+                                                                    href="{{ route('logout') }}"
+                                                                    onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();"
+                                                                    style="color: #F44336;">Logout</a></li>
+                                                            <form id="logout-form" action="{{ route('logout') }}"
+                                                                method="POST" class="d-none">
+                                                                @csrf
+                                                            </form>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                             <div class="w-[70%] text-[12px]">
                                                 <p class="text-[14px]">Welcome, XXX</p>
@@ -107,20 +244,20 @@
                                                 </a>
                                             </div>
                                             <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                            {{ Auth::user()->name }}
-                                                    </a>
-                                                    
-                                                    <div class="" aria-labelledby="navbarDropdown">
-                                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                                        onclick="event.preventDefault();
+                                                                        {{ Auth::user()->name }}
+                                                                </a>
+                                                                
+                                                                <div class="" aria-labelledby="navbarDropdown">
+                                                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                                                    onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                                            Logout
-                                                        </a>
-                                                        
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                            @csrf
-                                                        </form>
-                                                    </div> -->
+                                                                        Logout
+                                                                    </a>
+                                                                    
+                                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                        @csrf
+                                                                    </form>
+                                                                </div> -->
                                         </div>
                                     @endguest
                                 </div>
@@ -129,7 +266,7 @@
                     </div>
                 </div>
             </div>
-            <section class="earn-list">
+            <section class="earn-list py-[20px]">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2">
@@ -419,6 +556,12 @@
         </div>
     </footer>
     <!-- Footer Area End -->
+
+    <script>
+        document.querySelector('.mini-photo-wrapper').addEventListener('click', function() {
+            document.querySelector('.menu-container').classList.toggle('active');
+        });
+    </script>
 
 </body>
 
