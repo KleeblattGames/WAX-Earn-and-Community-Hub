@@ -24,6 +24,54 @@
 </head>
 
 <body>
+    {{-- <header class="header">
+        <div class="mainmenu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="container-fluid p-0">
+                                <a class="navbar-brand" href="index.html">
+                                    <img src="assets/images/logo.png" alt="">
+                                </a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#main_menu" aria-controls="main_menu" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="navbar-collapse justify-content-end fixed-height" id="main_menu">
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="index.html">Home
+                                                <div class="mr-hover-effect"></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="play.html">Starter Zone
+                                                <div class="mr-hover-effect"></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="profile.html">Earn WAXP
+                                                <div class="mr-hover-effect"></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="contact.html">Rewards
+                                                <div class="mr-hover-effect"></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin">
+                                        Register/Login</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header> --}}
     <header class="header">
         <div class="mainmenu-area">
             <div class="container">
@@ -129,10 +177,94 @@
                     </div>
                 </div>
             </div>
+            <section class="earn-list">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="single-winer">
+                                <div class="bottom-area">
+                                    <div class="left">
+                                        <span class="name">
+                                            Leroy Roy
+                                        </span>
+                                        <span class="cost">0.099 ETH</span>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="single-winer">
+                                <div class="bottom-area">
+                                    <div class="left">
+                                        <span class="name">
+                                            Leroy Roy
+                                        </span>
+                                        <span class="cost">0.099 ETH</span>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="single-winer">
+                                <div class="bottom-area">
+                                    <div class="left">
+                                        <span class="name">
+                                            Leroy Roy
+                                        </span>
+                                        <span class="cost">0.099 ETH</span>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="single-winer">
+                                <div class="bottom-area">
+                                    <div class="left">
+                                        <span class="name">
+                                            Leroy Roy
+                                        </span>
+                                        <span class="cost">0.099 ETH</span>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="single-winer">
+                                <div class="bottom-area">
+                                    <div class="left">
+                                        <span class="name">
+                                            Leroy Roy
+                                        </span>
+                                        <span class="cost">0.099 ETH</span>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="single-winer">
+                                <div class="bottom-area">
+                                    <div class="left">
+                                        <span class="name">
+                                            Leroy Roy
+                                        </span>
+                                        <span class="cost">0.099 ETH</span>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </header>
 
-    <main class="py-4" style="margin-top:82px;">
+    <main class="" style="margin-top:82px;">
         @yield('content')
     </main>
 
