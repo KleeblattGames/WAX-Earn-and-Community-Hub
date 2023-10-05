@@ -1307,9 +1307,9 @@ select:focus {
 }
 
 .earn-list {
-  position: absolute;
   width: 100vw;
   top: 110%;
+  background-color: #070b28;
   /* left: 50%; */
 }
 
