@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+{{ __('STARTER ZONE') }}
+@endsection
 
 @section('content')
 <div class="container">

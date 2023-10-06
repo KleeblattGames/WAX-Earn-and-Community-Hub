@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+{{ __('REWARDS') }}
+@endsection
 
 @section('content')
 <div class="container">

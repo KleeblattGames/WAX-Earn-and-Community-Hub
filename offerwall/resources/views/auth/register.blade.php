@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+{{ __('REGISTER') }}
+@endsection
 
 @section('content')
     <div class="container">
