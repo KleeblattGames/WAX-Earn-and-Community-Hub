@@ -141,11 +141,11 @@
 <body>
     <header class="header">
         <div class="mainmenu-area">
-            <div class="container">
-                <div class="row">
+            <div class="container w-full flex items-center h-[82px]">
+                <div class="row w-full">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <div class="container-fluid p-0">
+                            <div class="container-fluid p-0 flex items-center">
                                 <a class="navbar-brand" href="/home">
                                     <!-- <img src="{{ asset('assets/images/logo.png') }}" alt=""> -->
                                     <h4>KleeblattGames</h4>
@@ -157,15 +157,6 @@
                                 </button>
                                 <div class="navbar-collapse justify-content-end fixed-height" id="main_menu">
                                     @guest
-                                        <ul class="navbar-nav ml-auto">
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link {{ request()->segment(1) == 'home' || request()->segment(1) == 'profile' ? 'active' : '' }}"
-                                                    href="/home">
-                                                    &nbsp;
-                                                    <div class="mr-hover-effect"></div>
-                                                </a>
-                                            </li>
-                                        </ul>
                                         @if (Route::has('login'))
                                             <a class="mybtn1" href="{{ route('login') }}">Register / Login</a>
                                             {{-- <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin">Register / Login</a> --}}

@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/starter_zone');
-})->middleware("auth");
+    return redirect( '/home' );
+});
 Route::get('/rewards', function () {
     return view('rewards');
 })->middleware("auth"); 
