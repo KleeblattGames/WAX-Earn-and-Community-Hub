@@ -274,7 +274,7 @@
     <button type="button" onclick="hide_offerwall()" >×</button>
   </div>
   <div class="offerwall_body">
-    <iframe src="" frameborder="0" id="iframe"></iframe>
+    <iframe src=""  id="iframe"></iframe>
   </div>
 </div>
 
@@ -381,36 +381,55 @@
     var offer_modal = document.getElementById("offerwall_modal");
     var iframe = document.getElementById("iframe");
     var offerwall_title = document.getElementById("offerwall_title");
-    function show_offerwall(partner)
-    {
-      if(partner == "lootably")
-      {
-        iframe.src = "https://wall.lootably.com/?placementID=clhedla0e0oh101uy7xwj55vz&sid="+{{$user_id}};
-        iframe.contentWindow.location.reload();
-      } 
-      else
-      {
-        $.post("get_iframe", {
+    /* function show_offerwall(partner)
+    {     
+      offer_modal.style.visibility = "visible";
+      offerwall_title.innerHTML = partner+" Offer Wall";
+      $.post("get_iframe", {
             _token : $('meta[name="csrf-token"]').attr('content'),
             partner: partner
           },
           function(data, status){
             iframe.srcdoc = data;
           }
-        );
-      }
+      );
+    } */
+    function show_offerwall(partner)
+    {
       offer_modal.style.visibility = "visible";
       offerwall_title.innerHTML = partner+" Offer Wall";
+      let url = "";
+      if(partner == "lootably")
+      {
+        url = "https://wall.lootably.com/?placementID=clhedla0e0oh101uy7xwj55vz&sid=";     
+        url += {{ $user_id }};
+        iframe.src = url; 
+        iframe.src += ''; 
+      }
+      else if(partner == "notik")
+      {
+        $.post("get_iframe", {
+            _token : $('meta[name="csrf-token"]').attr('content'),
+            partner: partner
+          },
+          function(data, status){
+            iframe = iframe.contentWindow ||
+            iframe.contentDocument.document ||
+            iframe.contentDocument;
+            iframe.document.open();
+            iframe.document.write(data);
+            iframe.document.close();
+          }
+        );
+      }
     }
-   
     function hide_offerwall()
     {
-      offer_modal.style.visibility = "hidden";
-      iframe.srcdoc = "";
+      offer_modal.style.visibility = "hidden";    
       iframe.src = "";
     }
     $(document).ready(function(){
-      /* $.post("get_lootably_offers", {
+      /* $.post("get_notik_offers", {
           _token : $('meta[name="csrf-token"]').attr('content'),
         },
         function(data, status){
