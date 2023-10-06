@@ -158,7 +158,9 @@
                                 <div class="navbar-collapse justify-content-end fixed-height" id="main_menu">
                                     @guest
                                         @if (Route::has('login'))
-                                            <a class="mybtn1" href="{{ route('login') }}">Register / Login</a>
+                                            <a class="mybtn1" href="{{ route('login') }}">
+                                                {{ __('Register / Login') }}
+                                            </a>
                                             {{-- <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin">Register / Login</a> --}}
                                         @endif
                                     @else
@@ -166,25 +168,35 @@
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link {{ request()->segment(1) == 'home' || request()->segment(1) == 'profile' ? 'active' : '' }}"
                                                     href="/home">
-                                                    Home
+                                                    {{ __('Home') }}
                                                     <div class="mr-hover-effect"></div>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link {{ request()->segment(1) == 'starter_zone' ? 'active' : '' }}"
-                                                    href="/starter_zone">Starter Zone
+                                                    href="/starter_zone">
+                                                    {{ __('Starter Zone') }}
                                                     <div class="mr-hover-effect"></div>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link {{ request()->segment(1) == 'earn' ? 'active' : '' }}"
-                                                    href="/earn">Earn WAXP
+                                                    href="/earn">
+                                                    {{ __('Earn WAXP') }}
+                                                    <div class="mr-hover-effect"></div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{ request()->segment(1) == 'earn' ? 'active' : '' }}"
+                                                    href="/offers">
+                                                    {{ __('Offers') }}
                                                     <div class="mr-hover-effect"></div>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link {{ request()->segment(1) == 'rewards' ? 'active' : '' }}"
-                                                    href="/rewards">Rewards
+                                                    href="/rewards">
+                                                    {{ __('Rewards') }}
                                                     <div class="mr-hover-effect"></div>
                                                 </a>
                                             </li>
@@ -220,7 +232,9 @@
                                                                     href="{{ route('logout') }}"
                                                                     onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();"
-                                                                    style="color: #F44336;">Logout</a></li>
+                                                                    style="color: #F44336;">
+                                                                    {{ __('Logout') }}
+                                                                </a></li>
                                                             <form id="logout-form" action="{{ route('logout') }}"
                                                                 method="POST" class="d-none">
                                                                 @csrf
