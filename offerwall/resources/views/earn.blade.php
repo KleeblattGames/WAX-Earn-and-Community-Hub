@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+{{ __('WAXP EARN') }}
+@endsection
 
 @section('content')
 <link href="{{ asset('assets/css/earn.css') }}" rel="stylesheet"  type="text/css" />

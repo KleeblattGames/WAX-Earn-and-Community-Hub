@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('title')
+{{ __('VERIFY IT IS YOU') }}
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

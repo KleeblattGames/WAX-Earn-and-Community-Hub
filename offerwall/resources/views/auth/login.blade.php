@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+{{ __('LOGIN') }}
+@endsection
 
 @section('content')
     <!-- Login Area Start -->

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+{{ __('RESET PASS') }}
+@endsection
 
 @section('content')
 <div class="container">
