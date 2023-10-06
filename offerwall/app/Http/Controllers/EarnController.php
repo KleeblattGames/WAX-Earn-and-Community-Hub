@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-
+use GuzzleHttp\Client;
 use Auth;
 
 
@@ -60,7 +60,7 @@ class EarnController extends Controller
         else $url = $notik_url;
         $response = Http::get($url);
         if ($response->successful()) {
-            return $response; // Convert the response to JSON
+            return (string)$response; // Convert the response to JSON
             
             // Process the data as needed
         } else {
