@@ -156,35 +156,48 @@
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
                                 <div class="navbar-collapse justify-content-end fixed-height" id="main_menu">
-                                    <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link {{ (request()->segment(1) == 'home' || request()->segment(1) == 'profile' ) ? 'active' : '' }}" href="/home">
-                                                Home
-                                                <div class="mr-hover-effect"></div>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link {{ (request()->segment(1) == 'starter_zone') ? 'active' : '' }}" href="/starter_zone">Starter Zone
-                                                <div class="mr-hover-effect"></div>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link {{ (request()->segment(1) == 'earn') ? 'active' : '' }}" href="/earn">Earn WAXP
-                                                <div class="mr-hover-effect"></div>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link {{ (request()->segment(1) == 'rewards') ? 'active' : '' }}" href="/rewards">Rewards
-                                                <div class="mr-hover-effect"></div>
-                                            </a>
-                                        </li>
-                                    </ul>
                                     @guest
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link {{ request()->segment(1) == 'home' || request()->segment(1) == 'profile' ? 'active' : '' }}"
+                                                    href="/home">
+                                                    &nbsp;
+                                                    <div class="mr-hover-effect"></div>
+                                                </a>
+                                            </li>
+                                        </ul>
                                         @if (Route::has('login'))
                                             <a class="mybtn1" href="{{ route('login') }}">Register / Login</a>
                                             {{-- <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin">Register / Login</a> --}}
                                         @endif
                                     @else
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link {{ request()->segment(1) == 'home' || request()->segment(1) == 'profile' ? 'active' : '' }}"
+                                                    href="/home">
+                                                    Home
+                                                    <div class="mr-hover-effect"></div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{ request()->segment(1) == 'starter_zone' ? 'active' : '' }}"
+                                                    href="/starter_zone">Starter Zone
+                                                    <div class="mr-hover-effect"></div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{ request()->segment(1) == 'earn' ? 'active' : '' }}"
+                                                    href="/earn">Earn WAXP
+                                                    <div class="mr-hover-effect"></div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link {{ request()->segment(1) == 'rewards' ? 'active' : '' }}"
+                                                    href="/rewards">Rewards
+                                                    <div class="mr-hover-effect"></div>
+                                                </a>
+                                            </li>
+                                        </ul>
                                         <div class="flex items-center justify-between w-[350px] h-[82px]">
                                             <div class="flex flex-column">
                                                 {{-- <a href="{{ route('logout') }}">
@@ -228,7 +241,7 @@
 
                                             </div>
                                             <div class="w-[70%] text-[12px]">
-                                                <p class="text-[14px]">Welcome, XXX</p>
+                                                <p class="text-[14px]">Welcome, {{ Auth::user()->name }}</p>
                                                 <div class="d-flex justify-content-between">
                                                     <p class="text-[14px]">Your Balance:</p>
                                                     <div>
@@ -244,20 +257,20 @@
                                                 </a>
                                             </div>
                                             <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                                        {{ Auth::user()->name }}
-                                                                </a>
-                                                                
-                                                                <div class="" aria-labelledby="navbarDropdown">
-                                                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                                                    onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                                        Logout
+                                                                            {{ Auth::user()->name }}
                                                                     </a>
                                                                     
-                                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                                        @csrf
-                                                                    </form>
-                                                                </div> -->
+                                                                    <div class="" aria-labelledby="navbarDropdown">
+                                                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                                                        onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                                            Logout
+                                                                        </a>
+                                                                        
+                                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                            @csrf
+                                                                        </form>
+                                                                    </div> -->
                                         </div>
                                     @endguest
                                 </div>
