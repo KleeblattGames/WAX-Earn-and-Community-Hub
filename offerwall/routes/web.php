@@ -17,18 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/home');
 });
-// Route::get('/earn', function () {
-//     return view('earn');
-// });
+
 Route::get('/rewards', function () {
     return view('rewards');
-}); 
+})->middleware("auth"); 
 Route::get('/starter_zone', function () {
     return view('starter_zone');
-});
+})->middleware("auth");
 Route::get('/profile', function () {
     return view('profile');
-});
+})->middleware("auth");
 
 Auth::routes();
 

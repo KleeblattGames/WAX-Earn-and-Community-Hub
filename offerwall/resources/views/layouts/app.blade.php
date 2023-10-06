@@ -353,7 +353,7 @@
         </div>
     </header>
 
-    <main class="" style="margin-top:82px;">
+    <main class="mt-[220px]">
         @yield('content')
     </main>
 
