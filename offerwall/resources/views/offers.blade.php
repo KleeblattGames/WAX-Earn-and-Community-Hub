@@ -402,7 +402,7 @@
       if(partner == "lootably")
       {
         url = "https://wall.lootably.com/?placementID=clhedla0e0oh101uy7xwj55vz&sid=";     
-        url += {{ $user_id }};
+        // url +=  $user_id }};
         iframe.src = url; 
         iframe.src += ''; 
       }

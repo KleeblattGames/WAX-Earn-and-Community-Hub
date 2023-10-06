@@ -187,7 +187,7 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link {{ request()->segment(1) == 'earn' ? 'active' : '' }}"
+                                                <a class="nav-link {{ request()->segment(1) == 'offers' ? 'active' : '' }}"
                                                     href="/offers">
                                                     {{ __('Offers') }}
                                                     <div class="mr-hover-effect"></div>
