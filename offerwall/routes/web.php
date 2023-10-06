@@ -15,24 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
     return redirect('/starter_zone');
-})->middleware("auth");
-=======
-    return redirect('/home');
-});
->>>>>>> 77ce2b3203c8239d79a8928c83ec3407021881f5
-Route::get('/earn', function () {
-    return view('earn');
 })->middleware("auth");
 Route::get('/rewards', function () {
     return view('rewards');
 })->middleware("auth"); 
 Route::get('/starter_zone', function () {
     return view('starter_zone');
-})->middleware("auth");
-Route::get('/profile', function () {
-    return view('profile');
 })->middleware("auth");
 Route::get('/profile', function () {
     return view('profile');
