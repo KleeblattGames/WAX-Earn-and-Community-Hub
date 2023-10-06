@@ -55,10 +55,10 @@ class EarnController extends Controller
         $user_id = Auth::user()->id;
         $lootably_url = "https://wall.lootably.com/?placementID=clhedla0e0oh101uy7xwj55vz&sid=".$user_id;
         $notik_url = "https://notik.me/coins?api_key=tM9z2VjFRUGQ2iBdVZy43suBlzVl4a3t&pub_id=pO8AAu&app_id=ENRGtwfmUd&user_id=".$user_id;   
-        /* $url = "";
+        $url = "";
         if($request->partner == "lootably") $url = $lootably_url;
-        else $url = $notik_url; */
-        $response = Http::get($notik_url);
+        else $url = $notik_url;
+        $response = Http::get($url);
         if ($response->successful()) {
             return $response->body(); // Convert the response to JSON
             
@@ -98,7 +98,7 @@ class EarnController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**
