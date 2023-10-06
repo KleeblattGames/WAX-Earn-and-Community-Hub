@@ -233,10 +233,10 @@
           <div class="row">
             <div id="ecards-container">
               <div class="ecards center">
-                <div class="pcard">
+                <div class="pcard" id="pt_lootably" onclick="show_offerwall('lootably')">
                   <img  class="pcard-img " src="{{ asset('assets/images/offer_partners/lootably.png') }}" alt="Animals" >  
                 </div> 
-                <div class="pcard">
+                <div class="pcard" id="pt_notik" onclick="show_offerwall('notik')">
                   <img  class="pcard-img " src="{{ asset('assets/images/offer_partners/notik.png') }}" alt="Animals" >  
                 </div> 
               </div>
@@ -250,10 +250,10 @@
           <div class="row">
             <div id="ecards-container">
               <div class="ecards center">
-                <div class="pcard">
+                <div class="pcard" id="pt_lootably" onclick="show_offerwall('lootably')">
                   <img  class="pcard-img " src="{{ asset('assets/images/offer_partners/lootably.png') }}" alt="Animals" >  
                 </div> 
-                <div class="pcard">
+                <div class="pcard" id="pt_notik" onclick="show_offerwall('notik')">
                   <img  class="pcard-img " src="{{ asset('assets/images/offer_partners/notik.png') }}" alt="Animals" >  
                 </div> 
               </div>
@@ -263,9 +263,18 @@
       </div>
     </div>
   </div>
-  
-
 </div>
+<!--modal-->
+<div class="offerwall_modal" id="offerwall_modal">
+  <div class="offerwall_header">
+    <p id="offerwall_title">Modal Heading</p>
+    <button type="button" onclick="hide_offerwall()" >×</button>
+  </div>
+  <div class="offerwall_body">
+    <iframe src="" frameborder="0" id="iframe"></iframe>
+  </div>
+</div>
+
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
@@ -364,6 +373,45 @@
         );
         }
     });
+    });
+
+    var offer_modal = document.getElementById("offerwall_modal");
+    var iframe = document.getElementById("iframe");
+    var offerwall_title = document.getElementById("offerwall_title");
+    function show_offerwall(partner)
+    {
+      offer_modal.style.visibility = "visible";
+      offerwall_title.innerHTML = partner+" Offer Wall";
+      if(partner == "lootably")
+      {
+        iframe.src = "https://wall.lootably.com/?placementID=clhedla0e0oh101uy7xwj55vz&sid="+{{$user_id}};
+        iframe.contentWindow.location.reload();
+      } 
+      else
+      {
+        $.post("get_iframe", {
+            _token : $('meta[name="csrf-token"]').attr('content'),
+            partner: partner
+          },
+          function(data, status){
+            iframe.srcdoc = data;
+          }
+        );
+      }
+    }
+    function hide_offerwall()
+    {
+      offer_modal.style.visibility = "hidden";
+      iframe.srcdoc = "";
+    }
+    $(document).ready(function(){
+      /* $.post("get_lootably_offers", {
+          _token : $('meta[name="csrf-token"]').attr('content'),
+        },
+        function(data, status){
+          console.log("Data: " + data + "\nStatus: " + status);
+        }
+      ); */
     });
   </script>
 @endsection
