@@ -383,8 +383,6 @@
     var offerwall_title = document.getElementById("offerwall_title");
     function show_offerwall(partner)
     {
-      offer_modal.style.visibility = "visible";
-      offerwall_title.innerHTML = partner+" Offer Wall";
       if(partner == "lootably")
       {
         iframe.src = "https://wall.lootably.com/?placementID=clhedla0e0oh101uy7xwj55vz&sid="+{{$user_id}};
@@ -401,11 +399,15 @@
           }
         );
       }
+      offer_modal.style.visibility = "visible";
+      offerwall_title.innerHTML = partner+" Offer Wall";
     }
+   
     function hide_offerwall()
     {
       offer_modal.style.visibility = "hidden";
       iframe.srcdoc = "";
+      iframe.src = "";
     }
     $(document).ready(function(){
       /* $.post("get_lootably_offers", {
