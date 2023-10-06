@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-{{ __('WAXP EARN') }}
+{{ __('OFFERS') }}
 @endsection
 
 @section('content')
