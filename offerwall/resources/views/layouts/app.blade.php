@@ -22,6 +22,10 @@
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         ul {
             list-style: none;
         }
@@ -137,6 +141,17 @@
         }
     </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZK4P2MEPV7"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-ZK4P2MEPV7');
+</script>
 
 <body>
     <header class="header">
@@ -262,20 +277,20 @@
                                                 </a>
                                             </div>
                                             <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                                            {{ Auth::user()->name }}
-                                                                    </a>
-                                                                    
-                                                                    <div class="" aria-labelledby="navbarDropdown">
-                                                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                                                        onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                                            Logout
+                                                                                {{ Auth::user()->name }}
                                                                         </a>
                                                                         
-                                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                                            @csrf
-                                                                        </form>
-                                                                    </div> -->
+                                                                        <div class="" aria-labelledby="navbarDropdown">
+                                                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                                            onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                                                Logout
+                                                                            </a>
+                                                                            
+                                                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                                @csrf
+                                                                            </form>
+                                                                        </div> -->
                                         </div>
                                     @endguest
                                 </div>
