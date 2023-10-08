@@ -29,7 +29,7 @@ Route::get('/profile', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('userChecked');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')/* ->middleware('userChecked') */;
 Route::resource( '/earn', App\Http\Controllers\EarnController::class )->middleware('auth');
 Route::resource( '/offers', App\Http\Controllers\OffersController::class )->middleware('auth');
 Route::post('/get_lootably_offers', [App\Http\Controllers\EarnController::class, 'lootably_offers'])->middleware('auth');
