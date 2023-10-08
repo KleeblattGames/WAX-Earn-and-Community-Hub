@@ -17,14 +17,14 @@ class UserChecked
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check()) {
+        if ( Auth::check() ) {
             
-            if (Auth::user()->verified_at == NULL) {
+            if ( Auth::user() -> verified_at == NULL ) {
                 Auth::logout();
-                return redirect( "/home" )->with('error', 'Sorry, You are not allowed yet, Please wait.');
+                return redirect( "/home" )->with( 'error', 'Sorry, You are not allowed yet, Please wait.' );
             }
         }
     
-        return $next($request);
+        return $next( $request );
     }
 }
