@@ -13,7 +13,7 @@ class OffersController extends Controller
      */
     public function index()
     {
-        return view( "offers" );
+        return view( "offerwalls" );
     }
 
     /**

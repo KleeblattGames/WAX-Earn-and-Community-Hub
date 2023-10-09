@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect( '/home' );
 });
-Route::get('/rewards', function () {
-    return view('rewards');
+Route::get('/rewards_staking', function () {
+    return view('rewards_staking');
 })->middleware("auth"); 
-Route::get('/starter_zone', function () {
-    return view('starter_zone');
+Route::get('/community_hub', function () {
+    return view('community_hub');
 })->middleware("auth");
 Route::get('/profile', function () {
     return view('profile');
@@ -30,12 +30,11 @@ Route::get('/profile', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')/* ->middleware('userChecked') */;
-Route::resource( '/earn', App\Http\Controllers\EarnController::class )->middleware('auth');
-Route::resource( '/offers', App\Http\Controllers\OffersController::class )->middleware('auth');
+// Route::resource( '/earn', App\Http\Controllers\EarnController::class )->middleware('auth');
+Route::resource( '/offerwalls', App\Http\Controllers\OffersController::class )->middleware('auth');
 Route::post('/get_lootably_offers', [App\Http\Controllers\EarnController::class, 'lootably_offers'])->middleware('auth');
 Route::post('/get_notik_offers', [App\Http\Controllers\EarnController::class, 'notik_offers'])->middleware('auth');
 Route::post('/get_iframe', [App\Http\Controllers\EarnController::class, 'get_iframe'])->middleware('auth');
 Route::post('/lootably/postback', [App\Http\Controllers\EarnController::class, 'set_lootably_offers']);
 Route::post('/notik/postback', [App\Http\Controllers\EarnController::class, 'set_notik_offers']);
-// Route::resource( '/starter_zone', App\Http\Controllers\StarterZoneController::class );
 // Route::resource( '/rewards', App\Http\Controllers\RewardsController::class );
