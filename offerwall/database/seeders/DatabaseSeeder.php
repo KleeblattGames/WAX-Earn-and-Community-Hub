@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => "Admin",
             'email' => "admin@gmail.com",
+            'verified_at' => now(),
             'password' => Hash::make('test'),
             'created_at' => now(),
             'updated_at' => now(),
