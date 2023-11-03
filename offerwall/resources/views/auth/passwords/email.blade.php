@@ -8,7 +8,8 @@
     <div class="block login-modal py-[50px]" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
                 <div class="modal-body">
                     <div class="header-area">
                         <h4 class="title">Password Reset</h4>

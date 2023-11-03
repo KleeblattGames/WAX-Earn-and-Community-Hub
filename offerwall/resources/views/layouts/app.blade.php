@@ -22,10 +22,6 @@
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
         ul {
             list-style: none;
         }
@@ -141,24 +137,6 @@
         }
     </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZK4P2MEPV7"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-ZK4P2MEPV7');
-</script>
-@php
-    $useragent=$_SERVER['HTTP_USER_AGENT'];
-    if ( ( preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i',$useragent) || preg_match('/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i',substr($useragent,0,4))) != 0 ) {
-        header("Location: /mobile");
-        exit();
-    }
-@endphp
 
 <body>
     <header class="header">
@@ -180,9 +158,7 @@
                                 <div class="navbar-collapse justify-content-end fixed-height" id="main_menu">
                                     @guest
                                         @if (Route::has('login'))
-                                            <a class="mybtn1" href="{{ route('login') }}">
-                                                {{ __('Register / Login') }}
-                                            </a>
+                                            <a class="mybtn1" href="{{ route('login') }}">Register / Login</a>
                                             {{-- <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin">Register / Login</a> --}}
                                         @endif
                                     @else
@@ -190,35 +166,25 @@
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link {{ request()->segment(1) == 'home' || request()->segment(1) == 'profile' ? 'active' : '' }}"
                                                     href="/home">
-                                                    {{ __('Home') }}
+                                                    Home
                                                     <div class="mr-hover-effect"></div>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link {{ request()->segment(1) == 'community_hub' ? 'active' : '' }}"
-                                                    href="/community_hub">
-                                                    {{ __('Community Hub') }}
+                                                <a class="nav-link {{ request()->segment(1) == 'starter_zone' ? 'active' : '' }}"
+                                                    href="/starter_zone">Starter Zone
                                                     <div class="mr-hover-effect"></div>
                                                 </a>
                                             </li>
-                                            {{-- <li class="nav-item">
+                                            <li class="nav-item">
                                                 <a class="nav-link {{ request()->segment(1) == 'earn' ? 'active' : '' }}"
-                                                    href="/earn">
-                                                    {{ __('Earn WAXP') }}
-                                                    <div class="mr-hover-effect"></div>
-                                                </a>
-                                            </li> --}}
-                                            <li class="nav-item">
-                                                <a class="nav-link {{ request()->segment(1) == 'offerwalls' ? 'active' : '' }}"
-                                                    href="/offerwalls">
-                                                    {{ __('Offerwalls') }}
+                                                    href="/earn">Earn WAXP
                                                     <div class="mr-hover-effect"></div>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link {{ request()->segment(1) == 'rewards_staking' ? 'active' : '' }}"
-                                                    href="/rewards_staking">
-                                                    {{ __('Rewards & Staking') }}
+                                                <a class="nav-link {{ request()->segment(1) == 'rewards' ? 'active' : '' }}"
+                                                    href="/rewards">Rewards
                                                     <div class="mr-hover-effect"></div>
                                                 </a>
                                             </li>
@@ -254,9 +220,7 @@
                                                                     href="{{ route('logout') }}"
                                                                     onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();"
-                                                                    style="color: #F44336;">
-                                                                    {{ __('Logout') }}
-                                                                </a></li>
+                                                                    style="color: #F44336;">Logout</a></li>
                                                             <form id="logout-form" action="{{ route('logout') }}"
                                                                 method="POST" class="d-none">
                                                                 @csrf
@@ -284,20 +248,20 @@
                                                 </a>
                                             </div>
                                             <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                                                {{ Auth::user()->name }}
+                                                                            {{ Auth::user()->name }}
+                                                                    </a>
+                                                                    
+                                                                    <div class="" aria-labelledby="navbarDropdown">
+                                                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                                                        onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                                            Logout
                                                                         </a>
                                                                         
-                                                                        <div class="" aria-labelledby="navbarDropdown">
-                                                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                                                            onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                                                Logout
-                                                                            </a>
-                                                                            
-                                                                            <form id="logout-form" action="{{ route('logout') }}" mWAXPod="POST" class="d-none">
-                                                                                @csrf
-                                                                            </form>
-                                                                        </div> -->
+                                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                            @csrf
+                                                                        </form>
+                                                                    </div> -->
                                         </div>
                                     @endguest
                                 </div>
@@ -306,7 +270,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <section class="earn-list py-[20px]">
+            <section class="earn-list py-[20px]">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-2">
@@ -316,7 +280,7 @@
                                         <span class="name">
                                             Leroy Roy
                                         </span>
-                                        <span class="cost">0.099 WAXP</span>
+                                        <span class="cost">0.099 ETH</span>
 
                                     </div>
                                 </div>
@@ -329,7 +293,7 @@
                                         <span class="name">
                                             Leroy Roy
                                         </span>
-                                        <span class="cost">0.099 WAXP</span>
+                                        <span class="cost">0.099 ETH</span>
 
                                     </div>
                                 </div>
@@ -342,7 +306,7 @@
                                         <span class="name">
                                             Leroy Roy
                                         </span>
-                                        <span class="cost">0.099 WAXP</span>
+                                        <span class="cost">0.099 ETH</span>
 
                                     </div>
                                 </div>
@@ -355,7 +319,7 @@
                                         <span class="name">
                                             Leroy Roy
                                         </span>
-                                        <span class="cost">0.099 WAXP</span>
+                                        <span class="cost">0.099 ETH</span>
 
                                     </div>
                                 </div>
@@ -368,7 +332,7 @@
                                         <span class="name">
                                             Leroy Roy
                                         </span>
-                                        <span class="cost">0.099 WAXP</span>
+                                        <span class="cost">0.099 ETH</span>
 
                                     </div>
                                 </div>
@@ -381,7 +345,7 @@
                                         <span class="name">
                                             Leroy Roy
                                         </span>
-                                        <span class="cost">0.099 WAXP</span>
+                                        <span class="cost">0.099 ETH</span>
 
                                     </div>
                                 </div>
@@ -389,7 +353,7 @@
                         </div>
                     </div>
                 </div>
-            </section> --}}
+            </section>
         </div>
     </header>
 
@@ -399,7 +363,7 @@
 
     <!-- Footer Area Start -->
     <footer class="footer" id="footer">
-        {{-- <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
                     <div class="footer-widget info-link-widget">
@@ -562,7 +526,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
         <div class="copy-bg">
             <div class="container">
                 <div class="row">
