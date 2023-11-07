@@ -13,6 +13,10 @@
         .mr-hover-effect {
         left: -31px;
     }
+
+    .video_container {
+        margin-top: 300px;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -929,6 +933,12 @@
     }
 }
 
+@media (max-width: 654px) {
+    .history_table {
+        width: max-content;
+    }
+}
+
 @media (max-width: 575px) {
     .hero-area {
         padding: 232px 0px 265px;
@@ -1239,6 +1249,13 @@
     .single-bonus .content img {
         animation: unset;
     }
+    .main_container .lists_container li {
+        font-size: 12px !important;
+    }
+
+    .textarea .mybtn2 {
+        width: 140px !important;
+    }
 }
 
 @media (max-width: 500px) {
@@ -1331,6 +1348,11 @@
 
     .cards_container .cards {
         grid-template-columns: repeat(1, 1fr) !important;
+    }
+
+    .profile-page .info-table .main-box .main-header-area .nav li button {
+        font-size: 12px !important;
+        padding: 16px 9px !important;
     }
 }
 
@@ -1483,6 +1505,11 @@
     .breadcrumb-area.bc-contact {
         padding: 232px 0px 94px;
     }
+
+    .profile-page .info-table .main-box .main-header-area .nav {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
 }
 
 @media (max-width: 390px) {
@@ -1534,6 +1561,12 @@
     }
     .lottery-area .buy-tickets .buy-tickets-box .content {
         padding: 20px 15px 20px;
+    }
+
+    .main_container .mybtnMore,
+    .main_container .mybtnLearnMore {
+        padding: 14px 15px;
+        width: 120px !important;
     }
 }
 
@@ -1623,7 +1656,6 @@
     }
     .main_container .header_container {
         align-items: center;
-        height: 150px !important;
     }
 
     .header_container .heading {

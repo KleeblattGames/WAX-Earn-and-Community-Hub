@@ -151,13 +151,7 @@
                                     <h4>KleeblattGames</h4>
                                 </a>
                                 <div class="navbar-collapse justify-content-end fixed-height d-flex gap-3 sm:gap-[15px]" id="main_menu">
-                                    @guest
-                                    @if (Route::has('login'))
-                                    <a class="mybtnReg" href="{{ route('login') }}">PRE-REGISTER</a>
-                                    {{-- <a href="#" class="mybtnReg" data-toggle="modal" data-target="#signin">PRE-REGISTER</a> --}}
-                                    @endif
-                                    @else
-                                    <button id="burger-button" class="navbar-toggler" type="button">
+                                    <button id="burger-button" class="navbar-toggler relative" type="button">
                                         <span class="navbar-toggler-icon"></span>
                                         <div id="verticalMenu" class="vertical-menu">
                                             <ul class="navbar-nav navbar_burger">
@@ -183,12 +177,14 @@
                                                     </a>
                                                 </li>
                                             </ul>
+                                            @if (Auth::user())
                                             <div class="d-flex pt-3 gap-4">
                                                 <div class="flex w-full justify-between">
                                                     <p class="text-[14px] text-white">100,123.00$WAXP</p>
                                                     <p class="text-[14px] text-white">100,123.00$KLEE</p>
                                                 </div>
                                             </div>
+                                            @endif
                                         </div>
                                     </button>
                                     <ul class="navbar-nav m-auto navbar_big">
@@ -214,6 +210,12 @@
                                             </a>
                                         </li>
                                     </ul>
+                                    @guest
+                                    @if (Route::has('login'))
+                                    <a class="mybtnReg" href="{{ route('login') }}">PRE-REGISTER</a>
+                                    {{-- <a href="#" class="mybtnReg" data-toggle="modal" data-target="#signin">PRE-REGISTER</a> --}}
+                                    @endif
+                                    @else
                                     <div class="flex items-center justify-between w-[350px] h-[82px] detail_cont">
                                         <div class="w-[70%] text-[12px] navbar_big">
                                             <!-- <p class="text-[14px]">Welcome, {{ Auth::user()->name }}</p> -->
@@ -265,22 +267,21 @@
                                         </div>
 
                                         <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                                            {{ Auth::user()->name }}
-                                                                    </a>
-                                                                    
-                                                                    <div class="" aria-labelledby="navbarDropdown">
-                                                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                                                        onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                                            Logout
-                                                                        </a>
-                                                                        
-                                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                                            @csrf
-                                                                        </form>
-                                                                    </div> -->
+                                            {{ Auth::user()->name }}
+                                        </a>
+                                        
+                                        <div class="" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+                                        
+                                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                        @csrf
+                                                                    </form>
+                                                                </div> -->
                                     </div>
-
                                     @endguest
                                 </div>
                             </div>
@@ -291,7 +292,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="min-h-[calc(100vh-234px)]">
         @yield('content')
     </main>
 
@@ -511,9 +512,11 @@
 
     <script>
         const profilePopup = document.querySelector('#profile_popup')
-        profilePopup.addEventListener('click', function() {
-            document.querySelector('.menu-container').classList.toggle('active');
-        });
+        if (profilePopup) {
+            profilePopup.addEventListener('click', function() {
+                document.querySelector('.menu-container').classList.toggle('active');
+            });
+        }
 
         const burgerButton = document.getElementById('burger-button');
         const verticalMenu = document.getElementById('verticalMenu');

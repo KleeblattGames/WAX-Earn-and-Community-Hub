@@ -430,66 +430,36 @@ a:hover {
 }
 
 .mybtnMore {
+    padding: 14px 35px;
+    text-transform: none;
+}
+.mybtnReg:hover,
+.mybtn1:hover {
+    color: #01301f;
+}
+
+.mybtn2,
+.mybtn1 {
+    background-color: #aafcaa;
+    color: #01301f;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
     width: 183px;
     text-transform: none;
     height: 46px;
-}
-.mybtnReg:hover {
-    color: #01301f;
-}
-.mybtn1:hover {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(rgb(255, 52, 77)),
-        to(rgb(210, 39, 60))
-    );
-    background-image: linear-gradient(
-        to right,
-        rgb(255, 52, 77),
-        rgb(210, 39, 60)
-    );
-    color: #fff;
-    -webkit-transform: translateY(-2px);
-    transform: translateY(-2px);
-}
-
-.mybtn2 {
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 600;
-    height: 50px;
-    line-height: 50px;
-    width: 190px;
-    display: inline-block;
-    color: #fff;
     border: 0px;
     border-radius: 50px;
     cursor: pointer;
-    -webkit-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
-    background: -webkit-gradient(
-        linear,
-        right top,
-        left top,
-        from(#1c294e),
-        to(#1c294e)
-    );
-    background: linear-gradient(to left, #1c294e, #1c294e);
 }
 .mybtn2:hover {
-    background: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(rgb(255, 52, 77)),
-        to(rgb(210, 39, 60))
-    );
-    background: linear-gradient(to right, rgb(255, 52, 77), rgb(210, 39, 60));
-    color: #fff;
-    -webkit-transform: translateY(-2px);
-    transform: translateY(-2px);
+    color: #035c3c;
 }
 
 /* Section Heading Css */
@@ -2186,7 +2156,7 @@ a:hover {
     height: 50px;
     bottom: -25px;
     bottom: 3%;
-    left: 75%;
+    right: -55px;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
@@ -5987,7 +5957,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    height: 300px;
 }
 
 .main_container .video_text h1 {
@@ -5997,7 +5966,7 @@ a:hover {
     font-size: 42px;
     font-style: normal;
     font-weight: 800;
-    line-height: normal;
+    line-height: 4rem;
 }
 
 .main_container .video_text p {
@@ -6008,11 +5977,11 @@ a:hover {
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: 1.6rem;
 }
 
 .video_container {
-    margin-top: 300px;
+    margin-top: 500px;
 }
 .video_container video {
     width: 583px;
@@ -6033,7 +6002,7 @@ a:hover {
     font-size: 42px;
     font-style: normal;
     font-weight: 800;
-    line-height: normal;
+    line-height: 4rem;
     max-width: 383px;
 }
 
@@ -6045,11 +6014,11 @@ a:hover {
     font-style: normal;
     width: 100%;
     font-weight: 600;
-    line-height: normal;
+    line-height: 1.6rem;
 }
 
 .cards_container {
-    margin-top: 90px;
+    margin-top: 120px;
 }
 
 .cards_container .cards {
@@ -6162,7 +6131,6 @@ a:hover {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    padding-top: 2px;
 }
 
 .main_container .lists_container li::before {
@@ -6172,6 +6140,7 @@ a:hover {
     display: inline-block;
     width: 18px;
     height: 9px;
+    font-size: x-large;
     filter: drop-shadow(0px 0px 5px #8be78b) blur(0.5px);
 }
 
@@ -6286,8 +6255,8 @@ a:hover {
     flex-direction: column;
     position: absolute;
     background-color: #fff;
-    top: 84%;
-    right: 42px;
+    top: 171%;
+    right: -24px;
     padding: 10px;
     width: 256px;
     border-radius: 2px;

@@ -6,12 +6,22 @@
 @section('content')
 <script defer src="{{ asset('assets/js/pagination.js') }}"></script>
 <script defer src="{{ asset('assets/js/home.js') }}"></script>
-<main class="mt-[75px] pt-[365px] main_container px-[8px]">
+<main class="mt-[75px] pt-[365px] main_container px-[8px] pb-[65px]">
     <div class="header_container container">
-        <h1 class="heading">
+        <h1 class="heading xl:!leading-[5rem]">
             Go Multi-Chain with WAX NFT Bridges
         </h1>
-        <a class="mybtnMore" href="#">Learn More</a>
+        <div class="d-flex gap-3 flex-col lists_container">
+            <ul>
+                <li class="pt-[2px] xl:pt-[6px]">Lorem ipsum dolor sit amet consectetur</li>
+                <li class="pt-[2px] xl:pt-[6px]">Tellus turpis facilisis cursus nullam at quam placerat.</li>
+                <li class="pt-[2px] xl:pt-[6px]">Nec odio ante ac feugiat nibh id risus placerat nec.</li>
+            </ul>
+            <div class="flex gap-[25px]  sm:gap-[22px] pt-[20px] xl:pt-[42px]">
+                <a class="mybtnLearnMore" href="#">Learn More</a>
+                <a class="mybtnMore" href="#">Learn More</a>
+            </div>
+        </div>
     </div>
     <div class="container d-flex justify-content-between align-items-center video_container gap-10">
         <div>
@@ -41,14 +51,15 @@
     </div>
     <div class="container d-flex justify-content-between align-items-center mt-[100px] earth_container">
         <div class="d-flex gap-3 flex-col lists_container">
-            <h2>Lorem Ipsum Dolor Sit Amet Consectetur Laoreet</h2>
+            <h2 class="xl:!leading-[5rem]">Lorem Ipsum Dolor Sit Amet Consectetur Laoreet</h2>
             <ul>
-                <li>Lorem ipsum dolor sit amet consectetur</li>
-                <li>Tellus turpis facilisis cursus nullam at quam placerat.</li>
-                <li>Nec odio ante ac feugiat nibh id risus placerat nec.</li>
+                <li class="pt-[2px] xl:pt-[6px]">Lorem ipsum dolor sit amet consectetur</li>
+                <li class="pt-[2px] xl:pt-[6px]">Tellus turpis facilisis cursus nullam at quam placerat.</li>
+                <li class="pt-[2px] xl:pt-[6px]">Nec odio ante ac feugiat nibh id risus placerat nec.</li>
             </ul>
-            <div>
+            <div class="flex gap-[15px]  sm:gap-[22px] pt-[20px] xl:pt-[42px]">
                 <a class="mybtnLearnMore" href="#">Learn More</a>
+                <a class="mybtnMore" href="#">Learn More</a>
             </div>
         </div>
         <div>

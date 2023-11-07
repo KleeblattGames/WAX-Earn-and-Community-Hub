@@ -14,7 +14,7 @@
           </div>
         </div>
         <div class="row">
-          <div  >
+          <div>
             <div class="econtainer">
               <div id="ecards-container">
                 <div class="ecards">
@@ -38,7 +38,6 @@
                         <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
                       </div>
                     </div>
-
                   </div>
                   <div class="ecard">
                     <div class="center">
@@ -99,7 +98,15 @@
                   </div>
                   <div class="ecard">
                     <div class="center">
-                      <img class="ecard-img w-full max-h-[210px] max-h-[210px] h-full" src="{{ asset('assets/images/game1.png') }}" alt="Animals">
+                      <div class="relative w-full max-h-[210px] px-[8px]">
+                        <img class="ecard-img w-full max-h-[210px]" src="{{ asset('assets/images/game1.png') }}" alt="Animals">
+                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[16px] rounded-xl shadow_green flex justify-center items-center">
+                          <img src="{{ asset('assets/images/android_icon.png') }}" alt="andoid" />
+                        </div>
+                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[80px] rounded-xl shadow_green flex justify-center items-center">
+                          <img src="{{ asset('assets/images/adobe.png') }}" alt="andoid" />
+                        </div>
+                      </div>
                     </div>
                     <div class="flex justify-between items-center pt-[16px] px-[8px]">
                       <div>
@@ -109,78 +116,6 @@
                         <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
                       </div>
                     </div>
-
-                  </div>
-                  <div class="ecard">
-                    <div class="center">
-                      <div class="relative w-full max-h-[210px] px-[8px]">
-                        <img class="ecard-img w-full max-h-[210px]" src="{{ asset('assets/images/game2.png') }}" alt="Animals">
-                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[16px] rounded-xl shadow_green flex justify-center items-center">
-                          <img src="{{ asset('assets/images/android_icon.png') }}" alt="andoid" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex justify-between items-center pt-[16px] px-[8px]">
-                      <div>
-                        <p class="text-white text-base sm:text-lg md:text-[20px] font-extrabold">Genshin Impact</p>
-                      </div>
-                      <div>
-                        <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="ecard">
-                    <div class="center">
-                      <div class="relative w-full max-h-[210px] px-[8px]">
-                        <img class="ecard-img w-full max-h-[210px]" src="{{ asset('assets/images/game3.png') }}" alt="Animals">
-                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[16px] rounded-xl shadow_green flex justify-center items-center">
-                          <img src="{{ asset('assets/images/android_icon.png') }}" alt="andoid" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex justify-between items-center pt-[16px] px-[8px]">
-                      <div>
-                        <p class="text-white text-base sm:text-lg md:text-[20px] font-extrabold">Robo City</p>
-                      </div>
-                      <div>
-                        <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="ecard">
-                    <div class="center">
-                      <div class="relative w-full max-h-[210px] px-[8px]">
-                        <img class="ecard-img w-full max-h-[210px]" src="{{ asset('assets/images/game4.png') }}" alt="Animals">
-                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[16px] rounded-xl shadow_green flex justify-center items-center">
-                          <img src="{{ asset('assets/images/android_icon.png') }}" alt="andoid" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex justify-between items-center pt-[16px] px-[8px]">
-                      <div>
-                        <p class="text-white text-base sm:text-lg md:text-[20px] font-extrabold">Wonderlands</p>
-                      </div>
-                      <div>
-                        <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="ecard">
-                    <div class="center">
-                      <img class="ecard-img w-full max-h-[210px] max-h-[210px] h-full" src="{{ asset('assets/images/game1.png') }}" alt="Animals">
-                    </div>
-                    <div class="flex justify-between items-center pt-[16px] px-[8px]">
-                      <div>
-                        <p class="text-white text-base sm:text-lg md:text-[20px] font-extrabold">Flame Sword</p>
-                      </div>
-                      <div>
-                        <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
-                      </div>
-                    </div>
-
                   </div>
                   <div class="ecard">
                     <div class="center">
@@ -241,7 +176,15 @@
                   </div>
                   <div class="ecard">
                     <div class="center">
-                      <img class="ecard-img w-full max-h-[210px] max-h-[210px] h-full" src="{{ asset('assets/images/game1.png') }}" alt="Animals">
+                      <div class="relative w-full max-h-[210px] px-[8px]">
+                        <img class="ecard-img w-full max-h-[210px]" src="{{ asset('assets/images/game1.png') }}" alt="Animals">
+                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[16px] rounded-xl shadow_green flex justify-center items-center">
+                          <img src="{{ asset('assets/images/android_icon.png') }}" alt="andoid" />
+                        </div>
+                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[80px] rounded-xl shadow_green flex justify-center items-center">
+                          <img src="{{ asset('assets/images/adobe.png') }}" alt="andoid" />
+                        </div>
+                      </div>
                     </div>
                     <div class="flex justify-between items-center pt-[16px] px-[8px]">
                       <div>
@@ -251,7 +194,84 @@
                         <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
                       </div>
                     </div>
+                  </div>
+                  <div class="ecard">
+                    <div class="center">
+                      <div class="relative w-full max-h-[210px] px-[8px]">
+                        <img class="ecard-img w-full max-h-[210px]" src="{{ asset('assets/images/game2.png') }}" alt="Animals">
+                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[16px] rounded-xl shadow_green flex justify-center items-center">
+                          <img src="{{ asset('assets/images/android_icon.png') }}" alt="andoid" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-[16px] px-[8px]">
+                      <div>
+                        <p class="text-white text-base sm:text-lg md:text-[20px] font-extrabold">Genshin Impact</p>
+                      </div>
+                      <div>
+                        <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
+                      </div>
+                    </div>
 
+                  </div>
+                  <div class="ecard">
+                    <div class="center">
+                      <div class="relative w-full max-h-[210px] px-[8px]">
+                        <img class="ecard-img w-full max-h-[210px]" src="{{ asset('assets/images/game3.png') }}" alt="Animals">
+                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[16px] rounded-xl shadow_green flex justify-center items-center">
+                          <img src="{{ asset('assets/images/android_icon.png') }}" alt="andoid" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-[16px] px-[8px]">
+                      <div>
+                        <p class="text-white text-base sm:text-lg md:text-[20px] font-extrabold">Robo City</p>
+                      </div>
+                      <div>
+                        <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="ecard">
+                    <div class="center">
+                      <div class="relative w-full max-h-[210px] px-[8px]">
+                        <img class="ecard-img w-full max-h-[210px]" src="{{ asset('assets/images/game4.png') }}" alt="Animals">
+                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[16px] rounded-xl shadow_green flex justify-center items-center">
+                          <img src="{{ asset('assets/images/android_icon.png') }}" alt="andoid" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-[16px] px-[8px]">
+                      <div>
+                        <p class="text-white text-base sm:text-lg md:text-[20px] font-extrabold">Wonderlands</p>
+                      </div>
+                      <div>
+                        <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="ecard">
+                    <div class="center">
+                      <div class="relative w-full max-h-[210px] px-[8px]">
+                        <img class="ecard-img w-full max-h-[210px]" src="{{ asset('assets/images/game1.png') }}" alt="Animals">
+                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[16px] rounded-xl shadow_green flex justify-center items-center">
+                          <img src="{{ asset('assets/images/android_icon.png') }}" alt="andoid" />
+                        </div>
+                        <div class="w-[50px] h-[50px] backdrop-blur-[6.5px] absolute right-[16px] top-[80px] rounded-xl shadow_green flex justify-center items-center">
+                          <img src="{{ asset('assets/images/adobe.png') }}" alt="andoid" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-[16px] px-[8px]">
+                      <div>
+                        <p class="text-white text-base sm:text-lg md:text-[20px] font-extrabold">Flame Sword</p>
+                      </div>
+                      <div>
+                        <p class="text-lg sm:text-[20px] md:text-[22px] font-bold text-[#8BE78B]">0.03$</p>
+                      </div>
+                    </div>
                   </div>
                   <div class="ecard">
                     <div class="center">
@@ -292,7 +312,7 @@
         <div class="row pt-[60px] md:pt-[139px]">
           <div>
             <div class="row">
-              <div  >
+              <div>
                 <div class="mb-[20px] md:mb-[40px]">
                   <p class="text-white text-xl lg:text-[42px] font-extrabold">Offer Partners</p>
                 </div>
@@ -378,15 +398,16 @@
       </div>
     </main>
     <!--modal-->
-    <div class="offerwall_modal" id="offerwall_modal">
-      <div class="offerwall_header">
-        <p id="offerwall_title">Modal Heading</p>
-        <button type="button" onclick="hide_offerwall()">×</button>
+    <div class="bg-[#000000C4] fixed h-full w-full left-0 top-0 z-10" id="offerwall_modal">
+      <div class="offerwall_modal_info">
+        <div class="offerwall_header">
+          <p id="offerwall_title">Modal Heading</p>
+          <button type="button" onclick="hide_offerwall()">×</button>
+        </div>
+        <div class="offerwall_body">
+          <iframe src="" id="iframe"></iframe>
+        </div>
       </div>
-      <div class="offerwall_body">
-        <iframe src="" id="iframe"></iframe>
-      </div>
-
       <!-- Scripts -->
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
       <script>
@@ -497,6 +518,7 @@
           );
         } */
         function show_offerwall(partner) {
+          document.body.style.overflow = "hidden";
           offer_modal.style.visibility = "visible";
           offerwall_title.innerHTML = partner + " Offer Wall";
           let url = "";
@@ -522,7 +544,11 @@
           }
         }
 
+        // const offerwallModal = document.getElementById('offerwall_modal');
+        // offerwallModal.addEventListener('click',()=)
         function hide_offerwall() {
+          // console.log(e);
+          document.body.style.overflow = "auto"
           offer_modal.style.visibility = "hidden";
           iframe.src = "";
         }
