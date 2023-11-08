@@ -931,6 +931,18 @@
     .main_container .video_container {
         margin-top: 30px !important;
     }
+
+    .login-modal .title {
+        font-size: 20px;
+    }
+
+    .login-modal .sub-title {
+        font-size: 18px;
+    }
+
+    .login-modal label {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 654px) {
@@ -1097,9 +1109,7 @@
         .box {
         display: flow-root;
     }
-    .login-modal .modal-dialog .modal-content .modal-body .form-area {
-        padding: 0px 20px 10px;
-    }
+
     .login-modal .modal-dialog .modal-content .modal-body .header-area {
         padding: 16px 20px 10px;
     }
@@ -1322,6 +1332,27 @@
         left: -70px;
         top: 14px;
     }
+
+    .login-modal .title {
+        font-size: 18px;
+    }
+    .login-modal .header-area {
+        padding-top: 0;
+    }
+
+    .login-modal .sub-title {
+        font-size: 15px;
+    }
+    .login-modal label {
+        font-size: 14px;
+    }
+    .mybtn1 {
+        font-size: 14px;
+    }
+
+    .login-modal .modal-dialog .modal-content .modal-body .form-footer p {
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 469px) {
@@ -1509,6 +1540,23 @@
     .profile-page .info-table .main-box .main-header-area .nav {
         display: flex !important;
         justify-content: space-between !important;
+    }
+
+    .mybtn1 {
+        font-size: 12px;
+    }
+
+    .login-modal
+        .modal-dialog
+        .modal-content
+        .modal-body
+        .header-area
+        .sub-title {
+        font-size: 13px;
+    }
+
+    .login-modal .title {
+        font-size: 16px;
     }
 }
 

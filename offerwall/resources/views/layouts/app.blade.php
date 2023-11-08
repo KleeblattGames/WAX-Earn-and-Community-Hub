@@ -53,10 +53,11 @@
             padding-top: 5px;
             padding-bottom: 5px;
             margin-top: 20px;
+            right: -16px;
 
             .profile-highlight {
                 display: flex;
-                border-bottom: 1px solid $#E0E0E0;
+                border-bottom: 1px solid #E0E0E0;
                 padding: 12px 16px;
                 margin-bottom: 6px;
 
@@ -88,7 +89,7 @@
             }
 
             .footer {
-                border-top: 1px solid $#E0E0E0;
+                border-top: 1px solid #E0E0E0;
                 padding-top: 6px;
                 margin-top: 6px;
 
@@ -116,16 +117,6 @@
             }
 
             &:before {
-                position: absolute;
-                top: -16px;
-                left: 120px;
-                display: inline-block;
-                content: "";
-                border: 8px solid transparent;
-                border-bottom-color: $#E0E0E0;
-            }
-
-            &:after {
                 position: absolute;
                 top: -14px;
                 left: 210px;

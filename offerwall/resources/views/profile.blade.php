@@ -308,37 +308,39 @@
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="more-info" role="tabpanel" aria-labelledby="more-info-tab">
-                                                <div class="info-content">
-                                                    <div class="info-box">
-                                                        <h4 class="title">
-                                                            Tournament Duration
-                                                        </h4>
-                                                        <p class="text">
-                                                            7 Days (Monday 01 UTC - Sunday 23:59 UTC)
-                                                        </p>
-                                                    </div>
-                                                    <div class="info-box two">
-                                                        <h4 class="title">
-                                                            Applicable Games
-                                                        </h4>
-                                                        <p class="text">
-                                                            All Games Under 'Slots' Category
-                                                        </p>
-                                                    </div>
-                                                    <div class="info-box three">
-                                                        <h4 class="title">
-                                                            Free Spin Reward Games
+                                                <div class="info-content border-[0.5px] border-[#8BE78B] backdrop-blur rounded-xl my-[24px] md:my-8 p-[22px]">
+                                                    <div class="w-full flex flex-col light_ellipse w-full h-full bg-[#131313] rounded-[17px] gap-[20px] p-[22px]">
+                                                        <div class="flex flex-col gap-2">
+                                                            <h4 class="text-lg sm:text-xl md:text-[22.75px] text-white font-extrabold">
+                                                                Tournament Duration
+                                                            </h4>
+                                                            <p class="text-white text-base sm:text-lg md:text-xl">
+                                                                7 Days (Monday 01 UTC - Sunday 23:59 UTC)
+                                                            </p>
+                                                        </div>
+                                                        <div class="flex flex-col gap-2">
+                                                            <h4 class="text-lg sm:text-xl md:text-[22.75px] text-white font-extrabold">
+                                                                Applicable Games
+                                                            </h4>
+                                                            <p class="text-white text-base sm:text-lg md:text-xl">
+                                                                All Games Under 'Slots' Category
+                                                            </p>
+                                                        </div>
+                                                        <div class="flex flex-col gap-2">
+                                                            <h4 class="text-lg sm:text-xl md:text-[22.75px] text-white font-extrabold">
+                                                                Free Spin Reward Games
 
-                                                        </h4>
-                                                        <p class="text">
-                                                            Book Of Pyramids, Brave Viking, Desert Treasure, Hawaii
-                                                            Cocktails, Lucky Blue, Lucky Lady Clover, Lucky Sweets,
-                                                            Princess Of Sky, Princess Royal, Scroll Of Adventure,
-                                                            Slotomon Go, West Town Any Softswiss Slots Game | Wager x 40
-                                                            times
-                                                        </p>
+                                                            </h4>
+                                                            <p class="text-white text-base sm:text-lg md:text-xl">
+                                                                Book Of Pyramids, Brave Viking, Desert Treasure, Hawaii
+                                                                Cocktails, Lucky Blue, Lucky Lady Clover, Lucky Sweets,
+                                                                Princess Of Sky, Princess Royal, Scroll Of Adventure,
+                                                                Slotomon Go, West Town Any Softswiss Slots Game | Wager x 40
+                                                                times
+                                                            </p>
+                                                        </div>
+                                                        <a href="#" class="text-[#8BE78B] self-end w-max text-decoration-underline underline-offset-4 text-xs sm:text-sm">Terms and Conditions</a>
                                                     </div>
-                                                    <a href="#" class="mybtn1">Terms and Conditions</a>
                                                 </div>
                                             </div>
                                         </div>

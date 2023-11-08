@@ -440,7 +440,7 @@ a:hover {
 
 .mybtn2,
 .mybtn1 {
-    background-color: #aafcaa;
+    background-color: #aafcaa !important;
     color: #01301f;
     font-size: 16px;
     font-style: normal;
@@ -458,7 +458,8 @@ a:hover {
     border-radius: 50px;
     cursor: pointer;
 }
-.mybtn2:hover {
+.mybtn2:hover,
+.mybtn1 {
     color: #035c3c;
 }
 
@@ -2965,10 +2966,7 @@ a:hover {
 /* community and Blog Area End */
 /* Play Games Area Start */
 .play-games {
-    background: url(../images/play/playgame-bg.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    min-height: calc(100vh - 234px);
 }
 .play-games .gaming-activities {
     margin-top: -120px;
@@ -5707,10 +5705,19 @@ a:hover {
 /* login modal Area Start */
 .login-modal .modal-dialog .modal-content {
     background: #252f5a;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 0.5px solid #8be78b;
+    background: rgba(0, 0, 0, 0.58);
+    backdrop-filter: blur(6.5px);
+    padding: 22px;
 }
 .login-modal .modal-dialog .modal-content .modal-body {
-    padding: 0px;
+    padding: 22px;
+    background-image: url(../images/light_elipse.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
 }
 .login-modal .modal-dialog .modal-content .modal-body .logo-area {
     display: block;
@@ -5737,26 +5744,26 @@ a:hover {
     top: -4px;
 }
 .login-modal .modal-dialog .modal-content .modal-body .header-area {
-    padding: 47px 30px 10px;
+    padding: 25px 30px 25px;
     position: relative;
     z-index: 9;
     text-align: center;
 }
-.login-modal .modal-dialog .modal-content .modal-body .header-area .title {
+.login-modal .title {
     font-size: 24px;
     line-height: 34px;
     font-weight: 700;
     color: #fff;
-    text-transform: uppercase;
     margin-bottom: 2px;
 }
-.login-modal .modal-dialog .modal-content .modal-body .header-area .sub-title {
-    font-size: 24px;
+.login-modal .sub-title {
+    font-size: 20px;
     line-height: 34px;
     font-weight: 300;
+    color: #939393;
 }
 .login-modal .modal-dialog .modal-content .modal-body .form-area {
-    padding: 0px 30px 10px;
+    padding: 0px 0 10px;
 }
 .login-modal .modal-dialog .modal-content .modal-body .form-area .form-group {
     margin-bottom: 10px;
@@ -5785,22 +5792,10 @@ a:hover {
     label {
     font-size: 16px;
     font-weight: 400;
-    color: #a1aed4;
+    color: #939393;
     text-transform: capitalize;
 }
-.login-modal
-    .modal-dialog
-    .modal-content
-    .modal-body
-    .form-area
-    .form-group
-    .box
-    a {
-    font-size: 16px;
-    font-weight: 400;
-    color: #a1aed4;
-    text-transform: capitalize;
-}
+
 .login-modal
     .modal-dialog
     .modal-content
@@ -5825,23 +5820,33 @@ a:hover {
     a {
     color: #f9314b;
 }
-.login-modal .modal-dialog .modal-content .modal-body .form-area label {
-    font-size: 18px;
+.login-modal label {
+    font-size: 16px;
     line-height: 28px;
     color: #fff;
     font-weight: 600;
     margin-bottom: 4px;
 }
-.login-modal .modal-dialog .modal-content .modal-body .form-area .input-field {
+.login-modal .input-field {
     width: 100%;
     border: 0px;
     height: 50px;
     font-size: 14px;
-    color: #a1aed4;
+    color: #fff;
     background: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 12px;
 }
+
+.login-modal
+    .modal-dialog
+    .modal-content
+    .modal-body
+    .form-area
+    .input-field::placeholder {
+    color: #939393 !important;
+}
+
 .login-modal
     .modal-dialog
     .modal-content
@@ -5883,7 +5888,6 @@ a:hover {
     background: #273261;
     padding: 0px 30px;
     color: #fff;
-    text-transform: uppercase;
 }
 .login-modal .modal-dialog .modal-content .modal-body .form-area .mybtn1 {
     margin-top: 22px;
@@ -5894,16 +5898,9 @@ a:hover {
     text-align: center;
     padding: 0px 30px 6px;
 }
-.login-modal .modal-dialog .modal-content .modal-body .form-footer a {
-    -webkit-transition: all 0.3s ease-in;
-    transition: all 0.3s ease-in;
-    color: #fff;
-}
+
 .login-modal .modal-dialog .modal-content .modal-body .form-footer a i {
     font-size: 14px;
-}
-.login-modal .modal-dialog .modal-content .modal-body .form-footer a:hover {
-    color: #f9314b;
 }
 
 .login-modal.sign-in .modal-body .form-area {
@@ -5916,8 +5913,9 @@ a:hover {
 
 .modal-dialog .modal-content .close {
     position: absolute;
-    right: 9px;
+    right: 33px;
     z-index: 9;
+    top: 27px;
 }
 
 .modal-dialog .modal-content .close span {
@@ -6306,7 +6304,7 @@ a:hover {
     background-position: center;
 }
 
-.starter_zone_container .light_ellipse {
+.light_ellipse {
     background-image: url(../images/light_elipse.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -6321,5 +6319,42 @@ a:hover {
     content: "";
     border: 7px solid transparent;
     border-bottom-color: #ffffff;
+}
+
+.sign-modal {
+    background: url("../images/sign_back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+.form-check-input:checked {
+    background-color: #8be78bcc;
+    border-color: #8be78bcc;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(139, 231, 139, 0.51);
+}
+
+.invalid-feedback {
+    font-size: 14px;
+}
+
+.reg_input {
+    width: 100%;
+    border: 0px;
+    height: 50px;
+    font-size: 14px;
+    color: #fff;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 12px;
+}
+.reg_input:focus {
+    box-shadow: none;
+    border: 1px solid #ddd;
 }
 /* login modal Area End */
