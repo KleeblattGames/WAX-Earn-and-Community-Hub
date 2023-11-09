@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 Route::get('/rewards', function () {
     return view('rewards');
-})->middleware("auth"); 
+})->middleware("auth");
 Route::get('/starter_zone', function () {
     return view('starter_zone');
 })->middleware("auth");
