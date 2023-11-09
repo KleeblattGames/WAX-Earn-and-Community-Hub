@@ -13,7 +13,7 @@
 <!-- SignIn Area Start -->
 <div class="modal fade login-modal sign-in" id="signin" tabindex="-1" role="dialog" aria-labelledby="signin"
 aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered " role="document">
+<div class="modal-dialog modal-dialog-centered mt-[220px]" role="document">
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                 aria-hidden="true">&times;</span></button>
