@@ -5,6 +5,15 @@
 
 @section('content')
 <link href="{{ asset( 'assets/css/profile.css' ) }}" rel="stylesheet">
+<script type="text/javascript">
+    function FbotonOn()  
+                    { 
+                        if({{ Auth::user()->klee_balance}} == boolean->true)
+                            {
+                                document.getElementById('withdraw_feedback_confirm').innerHTML = "Sorry you cant withdraw crypto that you didnt earn your own from a test account!";
+                            }
+                        else document.getElementById('withdraw_feedback_confirm').innerHTML = "Your withdrawal requet will be proccessed as soon as possible!";
+                     } </script>
 <!-- Play Games Area Start -->
 <section class="play-games">
     <div class="profile-page">
@@ -39,17 +48,17 @@
                                         <div class="row">
                                             <div class="col-md-5 p-5 mt-1">
                                                 <div class="single-game">
-                                                    <img src="assets/images/game/icon1.png" height="100px" alt="">
+                                                 
                                                 </div>
                                                 <div class="h5 mt-5">
                                                     <div class="h3">Your Balance:</div>
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <span class="subtitle">Avaliable:</span>
+                                                            <span class="subtitle">Withdrawable:</span>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <span class="balance_value text-right"> 100,345 $WAXP</span>
-                                                            <span class="balance_value text-right"> 100,345 $KLEE</span>
+                                                            <span class="balance_value text-right"> {{ Auth::user()->wax_balance}} WAXP</span>
+                                                            <span class="balance_value text-right"> {{ Auth::user()->klee_balance}} $KLEE</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -59,8 +68,8 @@
                                                             <span class="subtitle">Locked:</span>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <span class="balance_value text-right"> 100,345 $WAXP</span>
-                                                            <span class="balance_value text-right"> 100,345 $KLEE</span>
+                                                            <span class="balance_value text-right"> 33.4544 $WAXP</span>
+                                                            <span class="balance_value text-right"> 5.4323 $KLEE</span>
                                                         </div>
                                                     </div>
                                                     
@@ -81,7 +90,8 @@
                                                 <div class="textarea w-100 h-100">
                                                     <textarea class="w-100 h-100" name="message"></textarea>
                                                     <button class="mybtn2">Edit/Save</button>
-                                                </div>
+                                         
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -89,28 +99,28 @@
                                 <div class="tab-pane fade p-5" id="withdraw_panel" role="tabpanel" aria-labelledby="withdraw-tab">
                                     <div class="row">
                                         <div class="col-md-7">
-                                            <div class="p">Select one of your abliable currencies you want to withdraw.</div>
+                                            <div class="p">Select the token you want to withdraw:</div>
                                         </div>
                                         <div class="col-md-5">
-                                            <input class="mr-2" type="radio" name="withdraw-type" value="waxp"><span class="value">100,234 $WAXP</span><br>
-                                            <input class="mr-2" type="radio" name="withdraw-type" value="klee"><span class="value">100,234 $KLEE</span><br>
+                                            <input class="mr-2" type="radio" name="withdraw-type" value="waxp"><span class="value">{{ Auth::user()->wax_balance}} $WAXP</span><br>
+                                            <input class="mr-2" type="radio" name="withdraw-type" value="klee"><span class="value">{{ Auth::user()->klee_balance}} $KLEE</span><br>
                                         </div>
                                     </div>
                                     <div class="row mt-5">
                                         <div class="col-md-7">
-                                            <div class="p">Select your withdraw method.</div>
+                                            <div class="p">Select your withdrawal method:</div>
                                         </div>
                                         <div class="col-md-5">
-                                            <input class="mr-2" type="radio" name="withdraw-method" value="wax"><span class="value">WAX</span><br>
-                                            <input class="mr-2" type="radio" name="withdraw-method" value="blockchain"><span class="value">Blockchain</span><br>
+                                            <input class="mr-2" type="radio" name="withdraw-method" value="wax"><span class="value">Wax Blockchain</span><br>
                                         </div>
                                     </div>
                                     <div class="row mt-5">
                                         <div class="col-md-7">
-                                            <div class="p">Provide your Wallet Address.</div>
+                                            <div class="p">Provide your Wallet Address:</div>
                                         </div>
-                                        <div class="col-md-5">
-                                            <input class="input-box" type="text" name="wallet-address" id="" placeholder="23423423423423">
+                                        <div class="col-md-5">   
+                                            <input class="mr-2" type="radio" value="current_wallet-address" class="value">{{ Auth::user()->wallet_address}} </span><br>
+                                            <input class="input-box" type="text" name="new_wallet-adress" id="new_wallet-adress" placeholder="or new wallet address"><br>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
@@ -118,12 +128,12 @@
                                     </div>
                                     <div class="row mt-5">
                                         <div class="col-md-5">
-                                            <a href="#" class="mybtn1">withdraw</a>
-                                        </div>
+                                            <input class="mybtn1" id='withdraw_button' value = "WITHDRAW" onclick="FbotonOn()">
+                                            <p id="withdraw_feedback_confirm"></p>
+                                            </div>
                                         <div class="col-md-4">
                                             <div class="text-group d-flex justify-content-between">
-                                                <span>You will received:</span>
-                                                <span>XXX</span>
+                                                
                                             </div>
                                             <div class="p">WITHDRAW WITH ZERO FEES!</div>
                                         </div>
@@ -140,162 +150,27 @@
                                                                 <tr>
                                                                     <th scope="col">Title</th>
                                                                     <th scope="col">Datetime</th>
-                                                                    <th scope="col">Points</th>
-                                                                    <th scope="col">Prize</th>
+                                                                    <th scope="col">Reward</th>
+                                                                    <th scope="col">Status</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
                                                                     <td>
                                                                         <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
+                                                                        Survey
                                                                     </td>
                                                                     <td>
                                                                         2023-10-05 18:15:14
                                                                     </td>
                                                                     <td>
-                                                                        33528.36
+                                                                        24.4543 WAXP
                                                                     </td>
                                                                     <td>
-                                                                        40 EUR X 30WR
+                                                                        APPROVED
                                                                     </td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
-                                                                    </td>
-                                                                    <td>
-                                                                        2023-10-05 18:15:14
-                                                                    </td>
-                                                                    <td>
-                                                                        33528.36
-                                                                    </td>
-                                                                    <td>
-                                                                        40 EUR X 30WR
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
-                                                                    </td>
-                                                                    <td>
-                                                                        2023-10-05 18:15:14
-                                                                    </td>
-                                                                    <td>
-                                                                        33528.36
-                                                                    </td>
-                                                                    <td>
-                                                                        40 EUR X 30WR
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
-                                                                    </td>
-                                                                    <td>
-                                                                        2023-10-05 18:15:14
-                                                                    </td>
-                                                                    <td>
-                                                                        33528.36
-                                                                    </td>
-                                                                    <td>
-                                                                        40 EUR X 30WR
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
-                                                                    </td>
-                                                                    <td>
-                                                                        2023-10-05 18:15:14
-                                                                    </td>
-                                                                    <td>
-                                                                        33528.36
-                                                                    </td>
-                                                                    <td>
-                                                                        40 EUR X 30WR
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
-                                                                    </td>
-                                                                    <td>
-                                                                        2023-10-05 18:15:14
-                                                                    </td>
-                                                                    <td>
-                                                                        33528.36
-                                                                    </td>
-                                                                    <td>
-                                                                        40 EUR X 30WR
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
-                                                                    </td>
-                                                                    <td>
-                                                                        2023-10-05 18:15:14
-                                                                    </td>
-                                                                    <td>
-                                                                        33528.36
-                                                                    </td>
-                                                                    <td>
-                                                                        40 EUR X 30WR
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
-                                                                    </td>
-                                                                    <td>
-                                                                        2023-10-05 18:15:14
-                                                                    </td>
-                                                                    <td>
-                                                                        33528.36
-                                                                    </td>
-                                                                    <td>
-                                                                        40 EUR X 30WR
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
-                                                                    </td>
-                                                                    <td>
-                                                                        2023-10-05 18:15:14
-                                                                    </td>
-                                                                    <td>
-                                                                        33528.36
-                                                                    </td>
-                                                                    <td>
-                                                                        40 EUR X 30WR
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="assets/images/play/ic4.png" alt="">
-                                                                        Dice
-                                                                    </td>
-                                                                    <td>
-                                                                        2023-10-05 18:15:14
-                                                                    </td>
-                                                                    <td>
-                                                                        33528.36
-                                                                    </td>
-                                                                    <td>
-                                                                        40 EUR X 30WR
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
+                                                            </tbody> 
                                                         </table>
                                                     </div>
                                                 </div>
