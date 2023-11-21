@@ -15,9 +15,9 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/plugin.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -53,10 +53,11 @@
             padding-top: 5px;
             padding-bottom: 5px;
             margin-top: 20px;
+            right: -16px;
 
             .profile-highlight {
                 display: flex;
-                border-bottom: 1px solid $#E0E0E0;
+                border-bottom: 1px solid #E0E0E0;
                 padding: 12px 16px;
                 margin-bottom: 6px;
 
@@ -88,7 +89,7 @@
             }
 
             .footer {
-                border-top: 1px solid $#E0E0E0;
+                border-top: 1px solid #E0E0E0;
                 padding-top: 6px;
                 margin-top: 6px;
 
@@ -117,16 +118,6 @@
 
             &:before {
                 position: absolute;
-                top: -16px;
-                left: 120px;
-                display: inline-block;
-                content: "";
-                border: 8px solid transparent;
-                border-bottom-color: $#E0E0E0;
-            }
-
-            &:after {
-                position: absolute;
                 top: -14px;
                 left: 210px;
                 display: inline-block;
@@ -142,127 +133,146 @@
     <header class="header">
         <div class="mainmenu-area">
             <div class="container w-full flex items-center h-[82px]">
-                <div class="row w-full">
+                <div class="row w-full mr-0 ml-0">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <div class="container-fluid p-0 flex items-center">
+                            <div class="container-fluid p-0 flex items-center flex-nowrap gap-2 sm gap-0">
                                 <a class="navbar-brand" href="/home">
                                     <!-- <img src="{{ asset('assets/images/logo.png') }}" alt=""> -->
                                     <h4>KleeblattGames</h4>
                                 </a>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#main_menu" aria-controls="main_menu" aria-expanded="false"
-                                    aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="navbar-collapse justify-content-end fixed-height" id="main_menu">
-                                    @guest
-                                        @if (Route::has('login'))
-                                            <a class="mybtn1" href="{{ route('login') }}">Register / Login</a>
-                                            {{-- <a href="#" class="mybtn1" data-toggle="modal" data-target="#signin">Register / Login</a> --}}
-                                        @endif
-                                    @else
-                                        <ul class="navbar-nav ml-auto">
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link {{ request()->segment(1) == 'home' || request()->segment(1) == 'profile' ? 'active' : '' }}"
-                                                    href="/home">
-                                                    Home
-                                                    <div class="mr-hover-effect"></div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link {{ request()->segment(1) == 'starter_zone' ? 'active' : '' }}"
-                                                    href="/starter_zone">Starter Zone
-                                                    <div class="mr-hover-effect"></div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link {{ request()->segment(1) == 'earn' ? 'active' : '' }}"
-                                                    href="/earn">Earn WAXP
-                                                    <div class="mr-hover-effect"></div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link {{ request()->segment(1) == 'rewards' ? 'active' : '' }}"
-                                                    href="/rewards">Rewards
-                                                    <div class="mr-hover-effect"></div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="flex items-center justify-between w-[350px] h-[82px]">
-                                            <div class="flex flex-column">
-                                                {{-- <a href="{{ route('logout') }}">
-                                                    <img src="{{ asset('assets/images/man_icon.png') }}" alt="man_icon"
-                                                        width="40px">
-                                                </a> --}}
-                                                <div class="user-menu-wrap">
-
-                                                    <a class="mini-photo-wrapper" href="#"><img class="mini-photo"
-                                                            src="{{ asset('assets/images/man_icon.png') }}" width="36"
-                                                            height="36" /></a>
-
-                                                    <div class="menu-container">
-                                                        <ul class="user-menu">
-                                                            <div class="profile-highlight items-center">
-                                                                <img src="{{ asset('assets/images/man_icon.png') }}"
-                                                                    alt="profile-img" width=36 height=36>
-                                                                <div class="details px-[15px]">
-                                                                    <div id="profile-name">{{ Auth::user()->name }}</div>
-                                                                </div>
-                                                            </div>
-                                                            <li class="user-menu__item">
-                                                                <a class="user-menu-link" href="/profile">
-                                                                    <div>Profile</div>
-                                                                </a>
-                                                            </li>
-                                                            <li class="user-menu__item">
-                                                            <li class="user-menu__item"><a class="user-menu-link"
-                                                                    href="{{ route('logout') }}"
-                                                                    onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();"
-                                                                    style="color: #F44336;">Logout</a></li>
-                                                            <form id="logout-form" action="{{ route('logout') }}"
-                                                                method="POST" class="d-none">
-                                                                @csrf
-                                                            </form>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="w-[70%] text-[12px]">
-                                                <p class="text-[14px]">Welcome, {{ Auth::user()->name }}</p>
-                                                <div class="d-flex justify-content-between">
-                                                    <p class="text-[14px]">Your Balance:</p>
-                                                    <div>
-                                                        <p class="text-[14px]">100,123.00$WAXP</p>
-                                                        <p class="text-[14px]">100,123.00$KLEE</p>
-                                                    </div>
+                                <div class="navbar-collapse justify-content-end fixed-height d-flex gap-3 sm:gap-[15px]" id="main_menu">
+                                    <button id="burger-button" class="navbar-toggler relative" type="button">
+                                        <span class="navbar-toggler-icon"></span>
+                                        <div id="verticalMenu" class="vertical-menu">
+                                            <ul class="navbar-nav navbar_burger">
+                                                <li class="nav-item dropdown text-start">
+                                                    <a class="nav-link {{ request()->segment(1) == 'home' || request()->segment(1) == 'profile' ? 'active' : '' }}" href="/home">
+                                                        Home
+                                                        <div class="mr-hover-effect"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item text-start">
+                                                    <a class="nav-link {{ request()->segment(1) == 'starter_zone' ? 'active' : '' }}" href="/starter_zone">Community
+                                                        <div class="mr-hover-effect"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item text-start">
+                                                    <a class="nav-link {{ request()->segment(1) == 'earn' ? 'active' : '' }}" href="/earn">Earn Crypto
+                                                        <div class="mr-hover-effect"></div>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item text-start">
+                                                    <a class="nav-link {{ request()->segment(1) == 'rewards' ? 'active' : '' }}" href="/rewards">Rewards
+                                                        <div class="mr-hover-effect"></div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            @if (Auth::user())
+                                            <div class="d-flex pt-3 gap-4">
+                                                <div class="flex w-full justify-between">
+                                                    <p class="text-[14px] text-white">100,123.00$WAXP</p>
+                                                    <p class="text-[14px] text-white">100,123.00$KLEE</p>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <a href="">
-                                                    <img src="{{ asset('assets/images/bell_icon.png') }}" alt="bel_icon"
-                                                        width="30px">
-                                                </a>
-                                            </div>
-                                            <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                                            {{ Auth::user()->name }}
-                                                                    </a>
-                                                                    
-                                                                    <div class="" aria-labelledby="navbarDropdown">
-                                                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                                                        onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                                                            Logout
-                                                                        </a>
-                                                                        
-                                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                                            @csrf
-                                                                        </form>
-                                                                    </div> -->
+                                            @endif
                                         </div>
+                                    </button>
+                                    <ul class="navbar-nav m-auto navbar_big">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link {{ request()->segment(1) == 'home' || request()->segment(1) == 'profile' ? 'active' : '' }}" href="/home">
+                                                Home
+                                                <div class="mr-hover-effect"></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link {{ request()->segment(1) == 'starter_zone' ? 'active' : '' }}" href="/starter_zone">Community
+                                                <div class="mr-hover-effect"></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link {{ request()->segment(1) == 'earn' ? 'active' : '' }}" href="/earn">Earn Crypto
+                                                <div class="mr-hover-effect"></div>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link {{ request()->segment(1) == 'rewards' ? 'active' : '' }}" href="/rewards">Rewards
+                                                <div class="mr-hover-effect"></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    @guest
+                                    @if (Route::has('login'))
+                                    <a class="mybtnReg" href="{{ route('login') }}">PRE-REGISTER</a>
+                                    {{-- <a href="#" class="mybtnReg" data-toggle="modal" data-target="#signin">PRE-REGISTER</a> --}}
+                                    @endif
+                                    @else
+                                    <div class="flex items-center justify-between w-[350px] h-[82px] detail_cont">
+                                        <div class="w-[70%] text-[12px] navbar_big">
+                                            <!-- <p class="text-[14px]">Welcome, {{ Auth::user()->name }}</p> -->
+                                            <div class="d-flex justify-content-end">
+                                                <!-- <p class="text-[14px]">Your Balance:</p> -->
+                                                <div>
+                                                    <p class="text-[14px] text-white">100,123.00$WAXP</p>
+                                                    <p class="text-[14px] text-white">100,123.00$KLEE</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="">
+                                                <img class="nothification" src="{{ asset('assets/images/nothification.png') }}" alt="nothification" width="23" height="23">
+                                            </a>
+                                        </div>
+                                        <div class="flex flex-column">
+                                            {{-- <a href="{{ route('logout') }}">
+                                            <img src="{{ asset('assets/images/man_icon.png') }}" alt="man_icon" width="40">
+                                            </a> --}}
+                                            <div class="user-menu-wrap" id="profile_popup">
+                                                <div class="d-flex align-items-center gap-2 w-[100px]">
+                                                    <a class="mini-photo-wrapper" href="#"><img class="mini-photo" src="{{ asset('assets/images/man_icon.png') }}" width="42" height="42" /></a>
+                                                    <img src="{{ asset('assets/images/arrow_down.png') }}" alt="profile-img" width=10 height=10>
+                                                </div>
+                                                <div class="menu-container">
+                                                    <ul class="user-menu">
+                                                        <div class="profile-highlight items-center">
+                                                            <img src="{{ asset('assets/images/man_icon.png') }}" alt="profile-img" width=36 height=36>
+                                                            <div class="details px-[15px]">
+                                                                <div id="profile-name">{{ Auth::user()->name }}</div>
+                                                            </div>
+                                                        </div>
+                                                        <li class="user-menu__item">
+                                                            <a class="user-menu-link" href="/profile">
+                                                                <div>Profile</div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="user-menu__item">
+                                                        <li class="user-menu__item"><a class="user-menu-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();" style="color: #F44336;">Logout</a></li>
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                        </form>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::user()->name }}
+                                        </a>
+                                        
+                                        <div class="" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+                                        
+                                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                                        @csrf
+                                                                    </form>
+                                                                </div> -->
+                                    </div>
                                     @endguest
                                 </div>
                             </div>
@@ -270,106 +280,22 @@
                     </div>
                 </div>
             </div>
-            <section class="earn-list py-[20px]">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="single-winer">
-                                <div class="bottom-area">
-                                    <div class="left">
-                                        <span class="name">
-                                            Leroy Roy
-                                        </span>
-                                        <span class="cost">0.099 ETH</span>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="single-winer">
-                                <div class="bottom-area">
-                                    <div class="left">
-                                        <span class="name">
-                                            Leroy Roy
-                                        </span>
-                                        <span class="cost">0.099 ETH</span>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="single-winer">
-                                <div class="bottom-area">
-                                    <div class="left">
-                                        <span class="name">
-                                            Leroy Roy
-                                        </span>
-                                        <span class="cost">0.099 ETH</span>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="single-winer">
-                                <div class="bottom-area">
-                                    <div class="left">
-                                        <span class="name">
-                                            Leroy Roy
-                                        </span>
-                                        <span class="cost">0.099 ETH</span>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="single-winer">
-                                <div class="bottom-area">
-                                    <div class="left">
-                                        <span class="name">
-                                            Leroy Roy
-                                        </span>
-                                        <span class="cost">0.099 ETH</span>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="single-winer">
-                                <div class="bottom-area">
-                                    <div class="left">
-                                        <span class="name">
-                                            Leroy Roy
-                                        </span>
-                                        <span class="cost">0.099 ETH</span>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </header>
 
-    <main class="mt-[220px]">
+    <main class="min-h-[calc(100vh-234px)]">
         @yield('content')
     </main>
 
     <!-- Footer Area Start -->
     <footer class="footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-lg-3">
+        <div class="footer_header container">
+            <h2>WAX Earn & Community Hub</h2>
+        </div>
+        <div class="container pt-[20px]">
+            <div class="row footer_links">
+                <div class="col-xs col-6 col-lg-4 col-res-xl">
                     <div class="footer-widget info-link-widget">
-                        <h4 class="title">
-                            About
-                        </h4>
                         <ul class="link-list">
                             <li>
                                 <a href="#">
@@ -386,6 +312,12 @@
                                     <i class="fas fa-angle-double-right"></i> Latest Blog
                                 </a>
                             </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs col-6 col-lg-4 col-res-xl">
+                    <div class="footer-widget info-link-widget">
+                        <ul class="link-list">
                             <li>
                                 <a href="#">
                                     <i class="fas fa-angle-double-right"></i> Authenticity Guarantee
@@ -405,11 +337,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
+                <div class="col-xs col-6 col-lg-4 col-res-xl">
                     <div class="footer-widget info-link-widget">
-                        <h4 class="title">
-                            My Account
-                        </h4>
                         <ul class="link-list">
                             <li>
                                 <a href="#">
@@ -426,6 +355,12 @@
                                     <i class="fas fa-angle-double-right"></i> How to Withdraw
                                 </a>
                             </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs col-6 col-lg-4 col-res-xl">
+                    <div class="footer-widget info-link-widget">
+                        <ul class="link-list">
                             <li>
                                 <a href="#">
                                     <i class="fas fa-angle-double-right"></i> Account Varification
@@ -445,11 +380,8 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
+                <div class="col-xs col-6 col-lg-4 col-res-xl">
                     <div class="footer-widget info-link-widget">
-                        <h4 class="title">
-                            help center
-                        </h4>
                         <ul class="link-list">
                             <li>
                                 <a href="#">
@@ -466,6 +398,12 @@
                                     <i class="fas fa-angle-double-right"></i>Quick Start Guide
                                 </a>
                             </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs col-6 col-lg-4 col-res-xl">
+                    <div class="footer-widget info-link-widget">
+                        <ul class="link-list">
                             <li>
                                 <a href="#">
                                     <i class="fas fa-angle-double-right"></i>Tutorials
@@ -485,86 +423,118 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="footer-widget info-link-widget">
-                        <h4 class="title">
-                            Legal Info
-                        </h4>
-                        <ul class="link-list">
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-angle-double-right"></i>Risk Warnings
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-angle-double-right"></i>Privacy Notice
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-angle-double-right"></i>Security
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-angle-double-right"></i>Terms of Service
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-angle-double-right"></i>Become Affiliate
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-angle-double-right"></i>Complaints Policy
-
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="copy-bg">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="left-area">
-                            <p>Copyright © 2023.All Rights Reserved By <a href="#">KleeblattGAMES</a>
-                            </p>
+                <div class="row under_footer">
+                    <div class="col-xs col-6 col-lg-4 col-res-xl">
+                        <div class="footer-widget info-link-widget">
+                            <ul class="link-list">
+                                <li>
+                                    <a href="#">
+                                        Risk Warnings
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-lg-7">
-                        <ul class="copright-area-links">
-                            <li>
-                                <a href="#">Terms Of Use</a>
-                            </li>
-                            <li>
-                                <a href="#">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="#">Gamble</a>
-                            </li>
-                            <li>
-                                <a href="#">Aware</a>
-                            </li>
-                            <li>
-                                <a href="#">Help Cente</a>
-                            </li>
-                        </ul>
+                    <div class="col-xs col-6 col-lg-4 col-res-xl">
+                        <div class="footer-widget info-link-widget">
+                            <ul class="link-list">
+                                <li>
+                                    <a href="#">
+                                        Privacy Notice
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs col-6 col-lg-4 col-res-xl">
+                        <div class="footer-widget info-link-widget">
+                            <ul class="link-list">
+                                <li>
+                                    <a href="#">
+                                        Security
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs col-6 col-lg-4 col-res-xl">
+                        <div class="footer-widget info-link-widget">
+                            <ul class="link-list">
+                                <li>
+                                    <a href="#">
+                                        Terms of Service
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs col-6 col-lg-4 col-res-xl">
+                        <div class="footer-widget info-link-widget">
+                            <ul class="link-list">
+                                <li>
+                                    <a href="#">
+                                        Become Affiliate
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs col-6 col-lg-4 col-res-xl">
+                        <div class="footer-widget info-link-widget">
+                            <ul class="link-list">
+                                <li>
+                                    <a href="#">
+                                        Complaints Policy
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </footer>
     <!-- Footer Area End -->
 
     <script>
-        document.querySelector('.mini-photo-wrapper').addEventListener('click', function() {
-            document.querySelector('.menu-container').classList.toggle('active');
-        });
+        const profilePopup = document.querySelector('#profile_popup')
+        if (profilePopup) {
+            profilePopup.addEventListener('click', function() {
+                document.querySelector('.menu-container').classList.toggle('active');
+            });
+        }
+
+        const burgerButton = document.getElementById('burger-button');
+        const verticalMenu = document.getElementById('verticalMenu');
+
+        burgerButton.addEventListener('click', () => {
+            verticalMenu.style.display = verticalMenu.style.display === 'block' ? 'none' : 'block';
+        })
+
+        function onClickOutside(ref, handler, mouseEvent = "mousedown") {
+            function eventListener(event) {
+                const el = ref;
+                if (!el || el.contains(event.target)) {
+                    return;
+                }
+
+                handler(event);
+            }
+            document.addEventListener(mouseEvent, eventListener);
+
+            return function cleanup() {
+                document.removeEventListener(mouseEvent, eventListener);
+            };
+        }
+        const burgerBtn = document.getElementById('burger-button');
+
+        onClickOutside(burgerButton, () => verticalMenu.style.display = 'none', 'click')
+        onClickOutside(profilePopup, () => document.querySelector('.menu-container').classList.remove('active'), 'click')
     </script>
 
 </body>

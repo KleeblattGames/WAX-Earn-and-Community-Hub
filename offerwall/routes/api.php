@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/notik_callback', [App\Http\Controllers\NotikPostbackController::class, 'handlePostback'])->name('notik_callback');

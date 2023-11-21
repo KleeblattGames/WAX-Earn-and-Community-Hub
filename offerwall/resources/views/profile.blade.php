@@ -15,143 +15,148 @@
                         else document.getElementById('withdraw_feedback_confirm').innerHTML = "Your withdrawal requet will be proccessed as soon as possible!";
                      } </script>
 <!-- Play Games Area Start -->
-<section class="play-games">
+<section class="play-games starter_zone_container">
     <div class="profile-page">
         <div class="info-table mt-1">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 px-[20px]">
                         <div class="main-box">
                             <div class="main-header-area">
                                 <ul class="nav" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general_panel" type="button"
-                                            role="tab" aria-controls="general_panel" aria-selected="true">General</button>
+                                        <button class="nav-link active" id="general-tab" data-bs-toggle="tab" data-bs-target="#general_panel" type="button" role="tab" aria-controls="general_panel" aria-selected="true">General</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="withdraw-tab" data-bs-toggle="tab" data-bs-target="#withdraw_panel" type="button"
-                                            role="tab" aria-controls="withdraw-panel" aria-selected="false">Withdraw</button>
+                                        <button class="nav-link" id="withdraw-tab" data-bs-toggle="tab" data-bs-target="#withdraw_panel" type="button" role="tab" aria-controls="withdraw-panel" aria-selected="false">Withdraw</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#history_panel" type="button"
-                                            role="tab" aria-controls="history_panel" aria-selected="false">History</button>
+                                        <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#history_panel" type="button" role="tab" aria-controls="history_panel" aria-selected="false">History</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="stake-tab" data-bs-toggle="tab" data-bs-target="#stake_panel" type="button"
-                                            role="tab" aria-controls="stake_panel" aria-selected="false">Stake</button>
+                                        <button class="nav-link" id="stake-tab" data-bs-toggle="tab" data-bs-target="#stake_panel" type="button" role="tab" aria-controls="stake_panel" aria-selected="false">Stake</button>
                                     </li>
                                 </ul>
                             </div>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="general_panel" role="tabpanel" aria-labelledby="general-tab">
-                                    <div class="container">
+                                    <div class="container !px-0">
                                         <div class="row">
-                                            <div class="col-md-5 p-5 mt-1">
-                                                <div class="single-game">
-                                                 
+
+                                            <div class="col-lg-5 py-[24px] md:py-8">
+                                                <div class="border-[0.5px] border-[#8BE78B] backdrop-blur rounded-xl flex justify-center items-center">
+                                                    <img class="w-1/2 sm:w-auto" src="assets/images/game/icon1.png" alt="game">
                                                 </div>
-                                                <div class="h5 mt-5">
-                                                    <div class="h3">Your Balance:</div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <span class="subtitle">Withdrawable:</span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span class="balance_value text-right"> {{ Auth::user()->wax_balance}} WAXP</span>
-                                                            <span class="balance_value text-right"> {{ Auth::user()->klee_balance}} $KLEE</span>
+                                                <div class="border-[0.5px] border-[#8BE78B] backdrop-blur rounded-xl flex flex-col mt-5 justify-center p-[22px] gap-[22px]">
+                                                    <div class="w-full flex flex-col light_ellipse w-full h-full bg-[#131313] rounded-[17px] md:gap-[20px] p-[22px]">
+                                                        <div class="h3 text-white text-lg sm:text-xl md:text-[22.75px]">Your Balance:</div>
+                                                        <div class="flex flex-col gap-3">
+                                                            <div class="flex justify-between border-b-[0.5px] gap-2 pb-2 border-b-[#8BE78B]">
+                                                                <div>
+                                                                    <span class="subtitle text-white text-base sm:text-lg md:text-xl">Avaliable:</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="balance_value text-white text-sm sm:text-base md:text-lg md:text-right">{{ Auth::user()->wax_balance}} WAXP</span>
+                                                                    <span class="balance_value text-white text-sm sm:text-base md:text-lg md:text-right"> {{ Auth::user()->klee_balance}} $KLEE</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex justify-between border-b-[0.5px] gap-2 pb-2 border-b-[#8BE78B]">
+                                                                <div>
+                                                                    <span class="subtitle text-white text-base sm:text-lg md:text-xl">Locked:</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="balance_value text-white text-sm sm:text-base md:text-lg md:text-right"> {{ Auth::user()->wax_balance}} WAXP</span>
+                                                                    <span class="balance_value text-white text-sm sm:text-base md:text-lg md:text-right"> 0.0000 $KLEE</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex justify-between gap-2 pb-2 ">
+                                                                <div>
+                                                                    <span class="subtitle text-white text-base sm:text-lg md:text-xl">Staking Level: X</span>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="balance_value text-white text-sm sm:text-base md:text-lg md:text-right">A</span>
+                                                                </div>
+                                                            </div>
+                                                            <a href="#" class="text-[#8BE78B] self-end w-max text-decoration-underline underline-offset-4 text-xs sm:text-sm leading-[22px]">Learn how to stake $KLEE</a>
+
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="h5 mt-5">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <span class="subtitle">Locked:</span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span class="balance_value text-right"> 33.4544 $WAXP</span>
-                                                            <span class="balance_value text-right"> 5.4323 $KLEE</span>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </div>
-                                                <div class="h5 mt-5">
-                                                    <div class="row mb-3">
-                                                        <div class="col-md-6">
-                                                            <span class="subtitle">Staking Level:</span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <span class="balance_value text-right"> A</span>
-                                                        </div>
-                                                    </div>
-                                                    <a href="#">Learn how to stake $KLEE</a>
                                                 </div>
                                             </div>
-                                            <div class="col-md-7 p-5">
-                                                <div class="textarea w-100 h-100">
-                                                    <textarea class="w-100 h-100" name="message"></textarea>
-                                                    <button class="mybtn2">Edit/Save</button>
-                                         
-                                                    </div>
+
+                                            <div class="col-lg-7 py-[24px] md:py-8">
+                                                <div class="textarea w-100 h-100 border-[0.5px] border-[#8BE78B] backdrop-blur rounded-xl">
+                                                    <textarea placeholder="Write here..." class="w-100 h-100 placeholder:text-white min-h-[350px] text-sm sm:text-base md:text-lg" name="message"></textarea>
+                                                    <button class="mybtn2 text-sm sm:text-base">Edit/Save</button>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade p-5" id="withdraw_panel" role="tabpanel" aria-labelledby="withdraw-tab">
-                                    <div class="row">
-                                        <div class="col-md-7">
-                                            <div class="p">Select the token you want to withdraw:</div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <input class="mr-2" type="radio" name="withdraw-type" value="waxp"><span class="value">{{ Auth::user()->wax_balance}} $WAXP</span><br>
-                                            <input class="mr-2" type="radio" name="withdraw-type" value="klee"><span class="value">{{ Auth::user()->klee_balance}} $KLEE</span><br>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-5">
-                                        <div class="col-md-7">
-                                            <div class="p">Select your withdrawal method:</div>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <input class="mr-2" type="radio" name="withdraw-method" value="wax"><span class="value">Wax Blockchain</span><br>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-5">
-                                        <div class="col-md-7">
-                                            <div class="p">Provide your Wallet Address:</div>
-                                        </div>
-                                        <div class="col-md-5">   
-                                            <input class="mr-2" type="radio" value="current_wallet-address" class="value">{{ Auth::user()->wallet_address}} </span><br>
-                                            <input class="input-box" type="text" name="new_wallet-adress" id="new_wallet-adress" placeholder="or new wallet address"><br>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2">
-                                        <a href="#">Don't have a WAX wallet? No Problem!</a>
-                                    </div>
-                                    <div class="row mt-5">
-                                        <div class="col-md-5">
-                                            <input class="mybtn1" id='withdraw_button' value = "WITHDRAW" onclick="FbotonOn()">
-                                            <p id="withdraw_feedback_confirm"></p>
+
+                                <div class="tab-pane fade border-[0.5px] border-[#8BE78B] backdrop-blur rounded-xl my-[24px] md:my-8 p-[22px]" id="withdraw_panel" role="tabpanel" aria-labelledby="withdraw-tab">
+                                    <div class="w-full flex flex-col light_ellipse w-full h-full bg-[#131313] rounded-[17px] md:gap-[20px] p-[22px]">
+                                        <div class="flex flex-col md:flex-row gap-[15px] md:gap-0 border-b-[0.5px] border-b-[#8be78b] pb-2 md:pb-0 justify-between w-full md:border-b-0">
+                                            <div class="p text-white text-sm sm:text-base md:text-lg">Select one of your abliable currencies you want to withdraw.</div>
+                                            <div class="w-[244px] flex">
+                                                <div class="flex justify-end flex-col">
+                                                    <div class="flex">
+                                                        <input id="waxp" class="mr-2 accent-[#8BE78B] cursor-pointer" type="radio" name="withdraw-type" value="waxp">
+                                                        <label for='waxp' class="value text-white cursor-pointer text-sm sm:text-base md:text-lg">{{ Auth::user()->wax_balance}} $WAXP</label>
+                                                    </div>
+                                                    <div class="flex">
+                                                        <input id="klee" class="mr-2 accent-[#8BE78B] cursor-pointer" type="radio" name="withdraw-type" value="klee">
+                                                        <label for='klee' class="value text-white cursor-pointer text-sm sm:text-base md:text-lg">0.0000 $KLEE</label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        <div class="col-md-4">
-                                            <div class="text-group d-flex justify-content-between">
-                                                
+                                        </div>
+                             
+                                        <div class="flex flex-col md:flex-row gap-[15px] md:gap-0 justify-between w-full mt-[25px] md:mt-5">
+                                            <div class="p text-white text-sm sm:text-base md:text-lg">Provide your Wallet Address.</div>
+                                            <div class="w-[244px] flex">
+                                              <input class="mr-2" type="radio" value="current_wallet-address" class="value">{{ Auth::user()->wallet_address}} </span><br>
+                                            <input class="input-box" type="text" name="new_wallet-adress" id="new_wallet-adress" placeholder="or new wallet address"><br>                                            
                                             </div>
-                                            <div class="p">WITHDRAW WITH ZERO FEES!</div>
+                                            
+                                            
+                                            
+                                            
+                                        </div>
+                                        <div class="row mt-[25px] md:mt-5">
+                                            <a href="#" class="text-[#8BE78B] self-end w-max text-decoration-underline underline-offset-4 text-xs sm:text-sm">Don't have a WAX wallet? No Problem!</a>
+                                        </div>
+                                        <div class="row pt-[25px] md:pt-5 justify-between">
+                                            <div class="col-md-5">
+                                                <a href="#" class="mybtn1 w-[140px] md:w-[183px] text-sm sm:text-base">Withdraw</a>
+                                            </div>
+                                            <div class="col-lg-4 mt-3 mt-lg-0">
+                                                <div class="text-group d-flex justify-content-between">
+                                                    <span class="text-white text-sm sm:text-base md:text-lg">You will received:</span>
+                                                    <span class="text-white text-sm sm:text-base md:text-lg">XXX</span>
+                                                </div>
+                                                <div class="p text-white text-sm sm:text-base md:text-lg">WITHDRAW WITH ZERO FEES!</div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="history_panel" role="tabpanel" aria-labelledby="history-tab">
-                                    <div class="inner-table-content">
-                                        <div class="tab-content">
+                                    <div class="inner-table-content border-[0.5px] border-[#8BE78B] backdrop-blur rounded-xl my-[24px] md:my-8 p-[22px]">
+                                        <div class="tab-content w-full flex flex-col light_ellipse w-full h-full bg-[#131313] rounded-[17px] md:gap-[20px]">
                                             <div class="tab-pane fade show active" id="leaderboard" role="tabpanel" aria-labelledby="leaderboard-tab">
                                                 <div class="inner-table">
                                                     <div class="responsive-table">
-                                                        <table class="table">
+                                                        <table class="table history_table">
                                                             <thead>
                                                                 <tr>
-                                                                    <th scope="col">Title</th>
+                                                                    <th scope="col" class="rounded_tl">Title</th>
                                                                     <th scope="col">Datetime</th>
-                                                                    <th scope="col">Reward</th>
-                                                                    <th scope="col">Status</th>
+
+                                                                    <th scope="col">Points</th>
+                                                                    <th scope="col" class="rounded_tr">Prize</th>
+
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -176,44 +181,48 @@
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="more-info" role="tabpanel" aria-labelledby="more-info-tab">
-                                                <div class="info-content">
-                                                    <div class="info-box">
-                                                        <h4 class="title">
-                                                            Tournament Duration
-                                                        </h4>
-                                                        <p class="text">
-                                                            7 Days (Monday 01 UTC - Sunday 23:59 UTC)
-                                                        </p>
-                                                    </div>
-                                                    <div class="info-box two">
-                                                        <h4 class="title">
-                                                            Applicable Games
-                                                        </h4>
-                                                        <p class="text">
-                                                            All Games Under 'Slots' Category
-                                                        </p>
-                                                    </div>
-                                                    <div class="info-box three">
-                                                        <h4 class="title">
-                                                            Free Spin Reward Games
+                                                <div class="info-content border-[0.5px] border-[#8BE78B] backdrop-blur rounded-xl my-[24px] md:my-8 p-[22px]">
+                                                    <div class="w-full flex flex-col light_ellipse w-full h-full bg-[#131313] rounded-[17px] gap-[20px] p-[22px]">
+                                                        <div class="flex flex-col gap-2">
+                                                            <h4 class="text-lg sm:text-xl md:text-[22.75px] text-white font-extrabold">
+                                                                Tournament Duration
+                                                            </h4>
+                                                            <p class="text-white text-base sm:text-lg md:text-xl">
+                                                                7 Days (Monday 01 UTC - Sunday 23:59 UTC)
+                                                            </p>
+                                                        </div>
+                                                        <div class="flex flex-col gap-2">
+                                                            <h4 class="text-lg sm:text-xl md:text-[22.75px] text-white font-extrabold">
+                                                                Applicable Games
+                                                            </h4>
+                                                            <p class="text-white text-base sm:text-lg md:text-xl">
+                                                                All Games Under 'Slots' Category
+                                                            </p>
+                                                        </div>
+                                                        <div class="flex flex-col gap-2">
+                                                            <h4 class="text-lg sm:text-xl md:text-[22.75px] text-white font-extrabold">
+                                                                Free Spin Reward Games
 
-                                                        </h4>
-                                                        <p class="text">
-                                                            Book Of Pyramids, Brave Viking, Desert Treasure, Hawaii
-                                                            Cocktails, Lucky Blue, Lucky Lady Clover, Lucky Sweets,
-                                                            Princess Of Sky, Princess Royal, Scroll Of Adventure,
-                                                            Slotomon Go, West Town Any Softswiss Slots Game | Wager x 40
-                                                            times
-                                                        </p>
+                                                            </h4>
+                                                            <p class="text-white text-base sm:text-lg md:text-xl">
+                                                                Book Of Pyramids, Brave Viking, Desert Treasure, Hawaii
+                                                                Cocktails, Lucky Blue, Lucky Lady Clover, Lucky Sweets,
+                                                                Princess Of Sky, Princess Royal, Scroll Of Adventure,
+                                                                Slotomon Go, West Town Any Softswiss Slots Game | Wager x 40
+                                                                times
+                                                            </p>
+                                                        </div>
+                                                        <a href="#" class="text-[#8BE78B] self-end w-max text-decoration-underline underline-offset-4 text-xs sm:text-sm">Terms and Conditions</a>
                                                     </div>
-                                                    <a href="#" class="mybtn1">Terms and Conditions</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="stake_panel" role="tabpanel" aria-labelledby="stake-tab">
-                                    <div class="h1 px-[20px] py-[20px]">COMMING SOON!!!</div>
+                                <div class="tab-pane fade pt-5" id="stake_panel" role="tabpanel" aria-labelledby="stake-tab">
+                                    <div class="flex justify-center items-center h-[200px] text-base lg:text-lg comin_soon_card text-white">
+                                        <img src="{{ asset('assets/images/coming-soon.png') }}" alt="coming-soon" width="200" />
+                                    </div>
                                 </div>
                             </div>
                         </div>

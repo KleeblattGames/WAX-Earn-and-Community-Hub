@@ -1,96 +1,131 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 #notfound {
-  position: relative;
-  height: 100vh;
+    position: relative;
+    height: 100vh;
 }
 
-#notfound .notfound {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.not_found {
+    background: url("../images/sign_back.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .notfound {
-  max-width: 410px;
-  width: 100%;
-  text-align: center;
+    max-width: 410px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
 }
 
 .notfound .notfound-404 {
-  height: 280px;
-  position: relative;
-  z-index: -1;
+    height: 280px;
 }
 
 .notfound .notfound-404 h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 230px;
-  margin: 0px;
-  font-weight: 900;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  background: url('../images/404/bg.jpg') no-repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: cover;
-  background-position: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 230px;
+    margin: 0px;
+    font-weight: 900;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    background-position: center;
 }
 
-
 .notfound h2 {
-  font-family: 'Montserrat', sans-serif;
-  color: #000;
-  font-size: 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 0;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 .notfound p {
-  font-family: 'Montserrat', sans-serif;
-  color: #000;
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  margin-top: 0px;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5px;
 }
 
 .notfound a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  text-decoration: none;
-  text-transform: uppercase;
-  background: #0046d5;
-  display: inline-block;
-  padding: 15px 30px;
-  border-radius: 40px;
-  color: #fff;
-  font-weight: 700;
-  -webkit-box-shadow: 0px 4px 15px -5px #0046d5;
-          box-shadow: 0px 4px 15px -5px #0046d5;
+    background-color: #aafcaa;
+    color: #01301f;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    width: 183px;
+    text-transform: none;
+    height: 46px;
+    border: 0px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
-
 
 @media only screen and (max-width: 767px) {
     .notfound .notfound-404 {
-      height: 142px;
+        height: 142px;
     }
     .notfound .notfound-404 h1 {
-      font-size: 112px;
+        font-size: 112px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .notfound .notfound-404 {
+        height: 90px;
+    }
+    .notfound .notfound-404 h1 {
+        font-size: 90px;
+    }
+
+    .notfound h2 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .notfound p {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .not_found a {
+        width: 124px;
+        font-size: 12px;
+        height: 38px;
     }
 }

@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string("ip")->nullable();
             $table->integer("status");
             $table->integer("multi_status")->nullable();
-            $table->float("payout");
-            $table->float("currency_reward");
+            $table->string("payout");
+            $table->string("currency_reward");
             $table->timestamps();
         });
     }
