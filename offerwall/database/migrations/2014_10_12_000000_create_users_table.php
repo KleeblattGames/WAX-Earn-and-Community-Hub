@@ -17,10 +17,19 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('country')->nullable();
             $table->timestamp('verified_at')->nullable();
+             $table->boolean('activated')->default(false);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
+
+          Schema::create('user_activations', function (Blueprint $table) {
+        $table->integer('user_id')->unsigned();
+        $table->string('token')->index();
+        $table->timestamp('created_at');
+    });
+
+        
     }
 
     /**
