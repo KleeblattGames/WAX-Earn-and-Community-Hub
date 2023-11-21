@@ -171,8 +171,8 @@
                                             @if (Auth::user())
                                             <div class="d-flex pt-3 gap-4">
                                                 <div class="flex w-full justify-between">
-                                                    <p class="text-[14px] text-white">100,123.00$WAXP</p>
-                                                    <p class="text-[14px] text-white">100,123.00$KLEE</p>
+                                                    <p class="text-[14px] text-white">{{ Auth::user()->wax_balance}} WAXP</p>
+                                                    <p class="text-[14px] text-white">{{ Auth::user()->klee_balance}} $KLEE</p>
                                                 </div>
                                             </div>
                                             @endif
