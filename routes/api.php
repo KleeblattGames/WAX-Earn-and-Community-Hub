@@ -19,3 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('/notik_callback', [App\Http\Controllers\NotikPostbackController::class, 'handlePostback'])->name('notik_callback');
 Route::get('/lootably_callback', [App\Http\Controllers\LootablyPostbackController::class, 'handlePostback'])->name('lootably_callback');
+Route::get('/bitlabs_callback', [App\Http\Controllers\BitlabsPostbackController::class, 'handlePostback'])->name('bitlabs_callback');
+Route::get('/ayet_callback', [App\Http\Controllers\AyetPostbackController::class, 'handlePostback'])->name('ayet_callback');
+Route::get('/pollfish_callback', [App\Http\Controllers\PollfishPostbackController::class, 'handlePostback'])->name('pollfish_callback');
