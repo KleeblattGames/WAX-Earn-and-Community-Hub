@@ -20,5 +20,9 @@ class Offer extends Model
         'multi_status',
         'payout',
         'currency_reward',
+        'points',
+        'wax_reward',
+        'klee_reward',
+        'reward_locked',
     ];
 }

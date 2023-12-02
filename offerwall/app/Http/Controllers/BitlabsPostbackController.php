@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Client;
 use App\Http\Controllers\Controller;
 
-
-class NotikPostbackController extends Controller
+class BitlabsPostbackController extends Controller
 {
     public function handlePostback(Request $request)
     {
@@ -21,12 +20,12 @@ class NotikPostbackController extends Controller
         $ip = $request->input('conversion_ip');
         $payout = $request->input('payout');
         $currency_reward = $request->input('currency_name');
-        $wax_reward = $request->input('amount');
+        $wax_reward = $request->input('user_amount');
         
 
         $offer = new Offer([
             'user_id' => $user_id,
-            'partner' => 'Notik',
+            'partner' => 'Bitlabs',
             'offer_name' => $offer_name,
             'offer_id' => $offer_id,
             'tx_id' => $tx_id,

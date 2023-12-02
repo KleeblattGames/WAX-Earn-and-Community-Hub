@@ -9,24 +9,23 @@ use Illuminate\Support\Facades\DB;
 use App\Client;
 use App\Http\Controllers\Controller;
 
-
-class NotikPostbackController extends Controller
+class AyetPostbackController extends Controller
 {
     public function handlePostback(Request $request)
     {
-        $user_id = $request->input('user_id');
+        $user_id = $request->input('external_identifier');
         $offer_name = $request->input('offer_name');
         $offer_id = $request->input('offer_id');
         $tx_id = $request->input('txn_id');
         $ip = $request->input('conversion_ip');
-        $payout = $request->input('payout');
+        $payout = $request->input('payout_usd');
         $currency_reward = $request->input('currency_name');
         $wax_reward = $request->input('amount');
         
 
         $offer = new Offer([
             'user_id' => $user_id,
-            'partner' => 'Notik',
+            'partner' => 'AyeT',
             'offer_name' => $offer_name,
             'offer_id' => $offer_id,
             'tx_id' => $tx_id,
